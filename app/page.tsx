@@ -715,16 +715,19 @@ export default function Home() {
             100% remotas como Senior Software Engineer, Senior Backend Engineer
           </p>
           <p className="mt-2 max-w-xl text-xs text-muted">
-            Preferência por CLT. Avalio propostas PJ.
+            Preferência por CLT. Avalio propostas PJ conforme escopo e contexto.
           </p>
         </Reveal>
 
         <div className="mt-8 flex flex-wrap items-stretch gap-4">
           {[
             {
-              label: "↓ baixar currículo (PDF)",
+              // TODO: troque pelo link real do seu currículo (Google Drive,
+              // GitHub, ou onde preferir hospedar) — abre em nova aba, sem
+              // manter o arquivo dentro do repositório do site.
+              label: "↗ ver currículo (PDF)",
               href: "/curriculo-leandro-franceschetto.pdf",
-              download: true,
+              external: true,
               primary: true,
             },
             { label: "leozztto@gmail.com", href: "mailto:leozztto@gmail.com" },
@@ -734,7 +737,8 @@ export default function Home() {
             <Reveal key={link.href} delay={180 + i * 100}>
               <a
                 href={link.href}
-                download={link.download || undefined}
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noopener noreferrer" : undefined}
                 className={
                   link.primary
                     ? "inline-flex h-full items-center gap-2 rounded border border-accent bg-accent/10 px-4 py-2.5 font-mono text-sm text-accent transition hover:bg-accent/20"
