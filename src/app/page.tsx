@@ -16,13 +16,8 @@ import { criticalDomains } from "@/content/domains";
 import { projects } from "@/content/projects";
 import { changelog } from "@/content/changelog";
 import { contactLinks } from "@/content/contact";
-
-function MethodTag({ method }: { method: string }) {
-  const color = method === "GET" ? "text-success" : "text-accent";
-  return (
-    <span className={`font-mono text-xs font-bold ${color}`}>{method}</span>
-  );
-}
+import { MethodTag } from "@/components/ui/MethodTag";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 
 export default function Home() {
   return (
@@ -466,23 +461,5 @@ export default function Home() {
         </div>
       </footer>
     </main>
-  );
-}
-
-function SectionHeader({
-  method,
-  route,
-  title,
-}: {
-  method: string;
-  route: string;
-  title: string;
-}) {
-  return (
-    <div className="mb-8 flex items-baseline gap-3 border-b border-border pb-4">
-      <MethodTag method={method} />
-      <span className="font-mono text-xs text-muted">{route}</span>
-      <h2 className="ml-auto font-display text-2xl font-bold">{title}</h2>
-    </div>
   );
 }
