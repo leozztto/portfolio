@@ -5,297 +5,17 @@ import Nav from "@/components/Nav";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
 import ArchitectureExplorer from "@/components/ArchitectureExplorer";
 import SkillRadar from "@/components/SkillRadar";
-
-const nav = [
-  { method: "GET", route: "/sobre", href: "#sobre" },
-  { method: "GET", route: "/atuacao", href: "#atuacao" },
-  { method: "GET", route: "/competencias", href: "#competencias" },
-  { method: "GET", route: "/projetos", href: "#projetos" },
-  { method: "GET", route: "/dominios", href: "#dominios" },
-  { method: "GET", route: "/arquitetura", href: "#arquitetura" },
-  { method: "GET", route: "/changelog", href: "#experiencia" },
-  { method: "POST", route: "/contato", href: "#contato" },
-];
-
-const stack = [
-  { group: "Linguagens", items: ["Java", "Kotlin", "SQL"] },
-  { group: "Frameworks", items: ["Spring Boot", "Hibernate / JPA", "Angular"] },
-  { group: "Mensageria & Dados", items: ["Kafka", "RabbitMQ", "PostgreSQL"] },
-  { group: "Infra & Cloud", items: ["Docker", "Kubernetes", "AWS / GCP"] },
-];
-
-const radarSkills = [
-  { label: ["Backend Java"], value: 5 },
-  { label: ["Mensageria", "& Eventos"], value: 5 },
-  { label: ["Cloud & DevOps"], value: 4.5 },
-  { label: ["Dados", "(SQL/NoSQL)"], value: 4.5 },
-  { label: ["Arquitetura", "& Design"], value: 4.5 },
-  { label: ["Sistemas", "Distribuídos"], value: 5 },
-];
-
-const coreEngineering = [
-  {
-    title: "Java & Spring",
-    badge: "Core Backend",
-    items: "Produção · APIs REST · Microsserviços · Sistemas críticos · Spring Boot",
-  },
-  {
-    title: "Kafka & Mensageria",
-    badge: "Event-Driven",
-    items: "Event-driven · RabbitMQ · Integrações assíncronas · Sistemas distribuídos",
-  },
-  {
-    title: "AWS & GCP Cloud",
-    badge: "Cloud Infrastructure",
-    items: "Kubernetes · Docker · Deploy em nuvem · Data Centers",
-  },
-  {
-    title: "Databases",
-    badge: "Data Layer",
-    items: "PostgreSQL · SQL Server · Bancos relacionais e não relacionais",
-  },
-  {
-    title: "Containers & Delivery",
-    badge: "DevOps & CI/CD",
-    items: "Docker · Kubernetes · CI/CD · Automação de pipelines",
-  },
-  {
-    title: "Architecture & Design",
-    badge: "System Design",
-    items: "Microsserviços · Event-Driven · Resiliência · Observabilidade",
-  },
-];
-
-const experienceAreas = [
-  "Microsserviços",
-  "Design de APIs",
-  "Mensageria",
-  "CI/CD",
-  "Bancos relacionais e não relacionais",
-  "Arquitetura orientada a eventos",
-  "Arquitetura de microsserviços",
-];
-
-const education = [
-  "Análise e Desenvolvimento de Sistemas — UTFPR (2014–2018)",
-  "MBA em Business Intelligence — Universidade Positivo (2019–2020)",
-  "Bacharelado em Filosofia, Linguagem e Existencialismo — Faculdade Vicentina",
-];
-
-const studyingNow = [
-  "Inteligência Artificial",
-  "Pós-Graduação Java Elite — Java e Agentes de IA (UniPDS, 2026–2027)",
-];
-
-const aboutStats = [
-  { value: "10", label: "anos em TI" },
-  { value: "8", label: "anos em desenvolvimento de software" },
-];
-
-const workingStyle = [
-  {
-    title: "Backend escalável",
-    description:
-      "APIs REST e microsserviços em Java e Kotlin com Spring Boot, pensados para crescer junto com o negócio.",
-    tags: ["Java", "Kotlin", "Spring Boot"],
-  },
-  {
-    title: "Arquitetura orientada a eventos",
-    description:
-      "Mensageria e processamento assíncrono com Kafka e RabbitMQ, desacoplando serviços críticos.",
-    tags: ["Kafka", "RabbitMQ", "Event-Driven"],
-  },
-  {
-    title: "Cloud & infraestrutura",
-    description:
-      "Deploy e operação em Kubernetes sobre AWS, GCP e data centers próprios.",
-    tags: ["AWS", "GCP", "Kubernetes", "Docker"],
-  },
-  {
-    title: "Resiliência & observabilidade",
-    description:
-      "Sistemas pensados para alta disponibilidade, consistência de dados e recuperação de falhas.",
-    tags: ["Resilience", "Observability"],
-  },
-  {
-    title: "Dados",
-    description:
-      "Modelagem e persistência em bancos relacionais e não relacionais, conforme a necessidade do domínio.",
-    tags: ["PostgreSQL", "SQL Server", "NoSQL"],
-  },
-  {
-    title: "CI/CD & qualidade",
-    description:
-      "Integração e entrega contínuas, testes automatizados e padronização de arquitetura.",
-    tags: ["CI/CD", "Testes", "Code Review"],
-  },
-];
-
-const problemsSolved = [
-  {
-    title: "Modernização de sistemas legados",
-    description:
-      "Evolução incremental de aplicações antigas para arquiteturas de microsserviços, sem quebrar fluxos existentes.",
-  },
-  {
-    title: "Integrações resilientes",
-    description:
-      "APIs, autenticação e mensageria com tratamento de falhas entre serviços distribuídos.",
-  },
-  {
-    title: "Arquitetura orientada a eventos",
-    description:
-      "Kafka e RabbitMQ para desacoplar sistemas e processar alto volume de eventos.",
-  },
-  {
-    title: "Consistência de dados",
-    description:
-      "Bancos relacionais e não relacionais, garantindo integridade em sistemas transacionais críticos.",
-  },
-  {
-    title: "Escalabilidade e alta disponibilidade",
-    description:
-      "Deploy em Kubernetes sobre AWS e GCP com foco em resiliência operacional.",
-  },
-  {
-    title: "CI/CD e qualidade técnica",
-    description:
-      "Pipelines de integração e entrega contínuas, testes automatizados e padronização de código.",
-  },
-];
-
-const criticalDomains = [
-  {
-    sector: "Financeiro & Pagamentos",
-    short: "Financeiro",
-    companies: "PagBank · Banco PAN",
-    detail:
-      "Sistemas transacionais de adquirência e tokenização, com processamento de mais de 300 mil eventos diários, foco em segurança e performance.",
-    highlights: ["+300 mil eventos/dia", "Tokenização & segurança", "Kafka + RabbitMQ"],
-  },
-  {
-    sector: "Varejo & ERP",
-    short: "Varejo",
-    companies: "CISS · TIVIT",
-    detail:
-      "Microsserviços e APIs para sistemas de gestão de varejo, com mensageria e arquitetura orientada a eventos.",
-    highlights: ["Microsserviços Java/Spring", "APIs REST + BFF", "Mensageria"],
-  },
-  {
-    sector: "Dados & Migração",
-    short: "Dados",
-    companies: "Limber Software · LZ Consultoria",
-    detail:
-      "Conversão e migração de dados entre PostgreSQL, Firebird, MySQL e Oracle em ambientes de produção.",
-    highlights: ["PostgreSQL · Firebird · MySQL · Oracle", "ETL & conversão", "Implantação e suporte"],
-  },
-];
-
-const projects = [
-  {
-    name: "lmf-bank-api",
-    method: "POST",
-    route: "/v1/accounts/:id/transfer",
-    description:
-      "Sistema bancário digital com arquitetura ledger + projection + event-driven, idempotência via Kafka e autenticação JWT.",
-    stack: ["Java 17", "Spring Boot", "Kafka", "PostgreSQL", "Kubernetes"],
-    request: `{ "amount": 250.00, "to_account": "acc_9f2" }`,
-    response: `{ "status": "completed", "idempotent": true }`,
-    href: "https://github.com/leozztto/LmfBankByLezzotto",
-  },
-  {
-    name: "lmf-event-driven-platform",
-    method: "PublishEvent",
-    route: "/v1/order",
-    description:
-      "Sistema Event-driven para comércio eletrônico, com microsserviços desacoplados, mensageria e deploy em Kubernetes e docker",
-    stack: ["Java17", "Spring Boot, Kafka broker", "PostgreSQL", "Kubernetes", "Docker"],
-    request: `Post /v1/order`,
-    response: `{ "status": "em construção" }`,
-    href: "https://github.com/leozztto/LmfEventDrivenPlatform",
-  },
-  {
-    name: "resilient-microservice-template",
-    method: "POST",
-    route: "/v1/bootstrap",
-    description:
-      "Template de microsserviço Spring Boot com circuit breaker, observabilidade e deploy padronizado em Kubernetes/AWS.",
-    stack: ["Spring Boot", "Docker", "AWS"],
-    request: `{ "service_name": "orders-api" }`,
-    response: `{ "created": true, "namespace": "prod" }`,
-    href: "#",
-  },
-];
-
-const changelog = [
-  {
-    version: "v6.0.0",
-    date: "jun 2026 — atual",
-    role: "Engenheiro de Software Sênior",
-    company: "LEZZOTTO Tech Ltda",
-    notes: ["[Adicione aqui os destaques desta posição atual.]"],
-  },
-  {
-    version: "v5.0.0",
-    date: "set 2024 — abr 2026",
-    role: "Engenheiro de Software SR",
-    company: "PAGBANK",
-    notes: [
-      "No PagBank, atuei como engenheiro sênior na evolução de soluções de adquirência e tokenização", 
-      "Tomada de decisões arquiteturais e implementação de sistemas transacionais de alta criticidade.",
-      "Evolução de microsserviços back-end em Java e Spring Boot para soluções de adquirência e tokenização.",
-      "Implementação de arquitetura orientada a eventos com Apache Kafka e RabbitMQ.",
-      "Deploy e operação em Kubernetes sobre AWS e DataCenters próprios.",
-      "Contribuição para o aumento de volume transacional e expansão da bandeira Banricompras.",
-      "Atuação em segurança, tokenização e performance tuning de sistemas transacionais críticos.",
-    ],
-  },
-  {
-    version: "v4.0.0",
-    date: "fev 2023 — set 2024",
-    role: "Engenheiro de Software",
-    company: "BANCO PAN",
-    notes: [
-      "No Banco PAN, participei da construção de um ecossistema(microsservices) distribuído para investimentos, processando mais de 300 mil eventos diários.",
-      "Arquitetura orientada a eventos com Apache Kafka e SQS.",
-      "Deploy de microsserviços em Kubernetes sobre AWS.",
-      "Participação em decisões de arquitetura e definição de padrões técnicos, reduzindo o acoplamento entre serviços.",
-    ],
-  },
-  {
-    version: "v3.0.0",
-    date: "dez 2022 — fev 2023",
-    role: "Desenvolvedor de Software Back-End",
-    company: "TIVIT",
-    notes: [
-      "Desenvolvimento de microsserviços, API REST e BFF em Java 8/11 com Spring Boot, Data, Security, JPA e Hibernate.",
-      "Comunicação entre serviços com FeignClient, containers em Docker e Kubernetes.",
-      "Testes unitários, de integração, carga e estresse com JUnit e Sonar.",
-    ],
-  },
-  {
-    version: "v2.0.0",
-    date: "nov 2020 — dez 2022",
-    role: "Desenvolvedor Full Stack",
-    company: "CISS S.A.",
-    notes: [
-      "Back-end em Java com Spring MVC/Boot, Security, JPA e Hibernate; front-end em Angular.",
-      "Desenvolvimento de aplicações de mensageria e relatórios com JasperReport.",
-      "Bancos de dados DB2, SQL Server e PL/SQL.",
-    ],
-  },
-  {
-    version: "v1.0.0",
-    date: "2017 — 2020",
-    role: "Desenvolvedor de Software / Especialista em Conversão de Dados",
-    company: "VIASOFT, LIMBER e LZ CONSULTORIA",
-    notes: [
-      "Desenvolvimento desktop com Delphi e relatórios/consultas personalizadas.",
-      "Migração e conversão de dados entre PostgreSQL, Firebird, MySQL e Oracle.",
-      "Implantação de sistemas e suporte técnico a clientes.",
-    ],
-  },
-];
+import { siteConfig } from "@/config/site";
+import { nav } from "@/content/navigation";
+import { stack } from "@/content/stack";
+import { radarSkills, coreEngineering } from "@/content/skills";
+import { aboutStats, experienceAreas, education, studyingNow } from "@/content/about";
+import { workingStyle } from "@/content/working-style";
+import { problemsSolved } from "@/content/problems";
+import { criticalDomains } from "@/content/domains";
+import { projects } from "@/content/projects";
+import { changelog } from "@/content/changelog";
+import { contactLinks } from "@/content/contact";
 
 function MethodTag({ method }: { method: string }) {
   const color = method === "GET" ? "text-success" : "text-accent";
@@ -353,15 +73,15 @@ export default function Home() {
               <p className="max-w-2xl text-muted">
                 Atuo com back-end há oito anos, boa parte desse tempo em
                 sistemas críticos, que exigem alta resiliência: pagamentos, mensageria
-                financeira e plataformas de alto volume transacional. Tenho grande 
+                financeira e plataformas de alto volume transacional. Tenho grande
                 preocupação em decisões de arquitetura que visam garantir a estabilidade
                 do sistema sob carga real.
               </p>
             </Reveal>
             <Reveal delay={250}>
               <p className="mt-4 max-w-2xl text-muted">
-                No dia a dia isso se traduz em tecnologias como Java e Kotlin 
-                com Spring Boot, Kafka para mensageria e aplicações Event-Driven 
+                No dia a dia isso se traduz em tecnologias como Java e Kotlin
+                com Spring Boot, Kafka para mensageria e aplicações Event-Driven
                 e deploys em Kubernetes sobre plataformas como AWS e GCP.
                 Escalabilidade e consistência de dados guiam praticamente toda
                 decisão técnica que tomo.
@@ -372,7 +92,7 @@ export default function Home() {
                 Agora estou expandindo esse repertório para Inteligência
                 Artificial, numa pós-graduação focada em Java aplicado a
                 agentes de IA — a ideia é levar essa camada para os mesmos
-                sistemas críticos onde já atuo e acelerar o desenvolvimento 
+                sistemas críticos onde já atuo e acelerar o desenvolvimento
                 melhorando a visibilidade arquitetural.
               </p>
             </Reveal>
@@ -720,20 +440,7 @@ export default function Home() {
         </Reveal>
 
         <div className="mt-8 flex flex-wrap items-stretch gap-4">
-          {[
-            {
-              // TODO: troque pelo link real do seu currículo (Google Drive,
-              // GitHub, ou onde preferir hospedar) — abre em nova aba, sem
-              // manter o arquivo dentro do repositório do site.
-              label: "↗ ver currículo (PDF)",
-              href: "/curriculo-leandro-franceschetto.pdf",
-              external: true,
-              primary: true,
-            },
-            { label: "leozztto@gmail.com", href: "mailto:leozztto@gmail.com" },
-            { label: "linkedin.com/in/leandro-mf", href: "https://www.linkedin.com/in/leandro-mf" },
-            { label: "github.com/leozztto", href: "https://github.com/leozztto" },
-          ].map((link, i) => (
+          {contactLinks.map((link, i) => (
             <Reveal key={link.href} delay={180 + i * 100}>
               <a
                 href={link.href}
@@ -754,8 +461,8 @@ export default function Home() {
 
       <footer className="border-t border-border px-6 py-8">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 font-mono text-xs text-muted">
-          <span>© {new Date().getFullYear()} Leandro Menegazzo Franceschetto</span>
-          <span>Senior Software Engineer — Back-End</span>
+          <span>© {new Date().getFullYear()} {siteConfig.name}</span>
+          <span>{siteConfig.role}</span>
         </div>
       </footer>
     </main>

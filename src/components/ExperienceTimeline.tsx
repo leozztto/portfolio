@@ -1,16 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import type { ChangelogEntry } from "@/types/content";
 
-type Entry = {
-  version: string;
-  date: string;
-  role: string;
-  company: string;
-  notes: string[];
-};
-
-export default function ExperienceTimeline({ entries }: { entries: Entry[] }) {
+export default function ExperienceTimeline({ entries }: { entries: ChangelogEntry[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
