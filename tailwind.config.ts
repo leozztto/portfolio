@@ -1,27 +1,26 @@
 import type { Config } from "tailwindcss";
+// Caminho relativo: o alias "@/" do tsconfig não é resolvido na config do Tailwind.
+import { palette } from "./src/lib/theme";
 
 const config: Config = {
-  content: [
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
       colors: {
-        bg: "#0B0E14",
-        surface: "#12161F",
-        "surface-alt": "#171C27",
-        border: "#232935",
-        text: "#E4E7EC",
-        muted: "#7C8494",
-        accent: "#E8A33D",
-        success: "#3ECF8E",
-        error: "#E8615A",
+        bg: palette.bg,
+        surface: palette.surface,
+        "surface-alt": palette.surfaceAlt,
+        border: palette.border,
+        text: palette.text,
+        muted: palette.muted,
+        accent: palette.accent,
+        success: palette.success,
+        error: palette.error,
       },
       fontFamily: {
-        display: ["var(--font-display)"],
-        body: ["var(--font-body)"],
-        mono: ["var(--font-mono)"],
+        display: ["var(--font-display)", "ui-sans-serif", "system-ui", "sans-serif"],
+        body: ["var(--font-body)", "ui-sans-serif", "system-ui", "sans-serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
       },
     },
   },

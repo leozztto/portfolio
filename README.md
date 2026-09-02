@@ -13,22 +13,34 @@ npm run dev
 
 Acesse http://localhost:3000
 
+## Estrutura
+
+```
+src/
+  app/            # rotas (layout, page, api/status, robots, sitemap, not-found, error)
+  config/site.ts  # nome, cargo, e-mail, URL, redes, currículo — fonte única de verdade
+  types/          # interfaces do conteúdo
+  content/        # dados tipados, um arquivo por área
+  lib/theme.ts    # tokens de cor (paleta do Tailwind + tons dos diagramas)
+  components/
+    layout/       # SiteHeader, Nav, SiteFooter
+    ui/           # Reveal, MethodTag, SectionHeader
+    diagrams/     # radar de skills, arquitetura, rede neural
+    sections/     # um componente por seção da página
+```
+
+`src/app/page.tsx` só compõe as seções — o conteúdo vive em `src/content/` e `src/config/site.ts`.
+
 ## Personalizar
 
-Os pontos que você precisa editar estão marcados com `Seu Nome` / `seuemail@dominio.com` / placeholders:
-
-- `app/api/status/route.ts` — seus dados reais (nome, cargo, stack, contato). Isso alimenta o terminal do hero.
-- `app/page.tsx` — arrays no topo do arquivo:
-  - `stack` — suas tecnologias, agrupadas
-  - `projects` — seus projetos reais (nome, descrição, request/response de exemplo, link do repo)
-  - `changelog` — sua experiência profissional
-  - seção `#sobre` — seu resumo profissional
-  - seção `#contato` — seus links (email, GitHub, LinkedIn)
-- `app/layout.tsx` — `title` e `description` (metadata para SEO/compartilhamento)
+- `src/config/site.ts` — nome, cargo, e-mail, URL de produção, LinkedIn/GitHub, caminho do currículo. Usado em metadata, footer, contato, `/api/status`, sitemap e robots.
+- `src/content/*.ts` — todo o texto: `stack`, `projects`, `changelog`, `about`, `working-style`, `domains`, `skills`, `navigation`, `contact`, `status`.
+- `src/app/layout.tsx` — `title` e `description` (metadata para SEO/compartilhamento).
 
 ## Cores e tipografia
 
-Definidas em `tailwind.config.ts` (cores) e `app/layout.tsx` (fontes: Space Grotesk para títulos, Inter para corpo, JetBrains Mono para código/labels). Para trocar a cor de destaque, edite `accent` em `tailwind.config.ts`.
+- **Cores:** `src/lib/theme.ts` (`palette`) — consumida pelo `tailwind.config.ts` e pelos diagramas SVG. Para trocar a cor de destaque, edite `palette.accent`.
+- **Fontes:** carregadas via `next/font` em `src/app/layout.tsx` — Space Grotesk (títulos), Inter (corpo), JetBrains Mono (código/labels), expostas como `--font-display` / `--font-body` / `--font-mono` e mapeadas em `tailwind.config.ts`.
 
 ## Deploy na Vercel
 
