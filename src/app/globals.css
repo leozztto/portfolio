@@ -37,14 +37,3 @@ html {
 @keyframes blink {
   50% { opacity: 0; }
 }
-
-.type-line {
-  overflow: hidden;
-  white-space: nowrap;
-  animation: type 1.6s steps(40, end) forwards;
-  width: 0;
-}
-
-@keyframes type {
-  to { width: 100%; }
-}
