@@ -1,3 +1,5 @@
+import { palette, diagram } from "@/lib/theme";
+
 type Skill = { label: string[]; value: number };
 
 const MAX = 5;
@@ -30,8 +32,8 @@ export function SkillRadar({ skills }: { skills: Skill[] }) {
     <svg viewBox="0 0 480 480" className="h-auto w-full">
       <defs>
         <linearGradient id="radarFill" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.35" />
-          <stop offset="100%" stopColor="#1E3A5F" stopOpacity="0.55" />
+          <stop offset="0%" stopColor={diagram.radarGradientFrom} stopOpacity="0.35" />
+          <stop offset="100%" stopColor={diagram.radarGradientTo} stopOpacity="0.55" />
         </linearGradient>
       </defs>
 
@@ -41,7 +43,7 @@ export function SkillRadar({ skills }: { skills: Skill[] }) {
           key={r}
           points={skills.map((_, i) => point(r * MAX_R, i, total).join(",")).join(" ")}
           fill="none"
-          stroke="#232935"
+          stroke={palette.border}
           strokeWidth="1"
         />
       ))}
@@ -50,15 +52,15 @@ export function SkillRadar({ skills }: { skills: Skill[] }) {
       {skills.map((_, i) => {
         const [x, y] = point(MAX_R, i, total);
         return (
-          <line key={i} x1={CX} y1={CY} x2={x} y2={y} stroke="#232935" strokeWidth="1" />
+          <line key={i} x1={CX} y1={CY} x2={x} y2={y} stroke={palette.border} strokeWidth="1" />
         );
       })}
 
       {/* polígono de dados */}
-      <polygon points={dataPoints} fill="url(#radarFill)" stroke="#6EC1FF" strokeWidth="2" />
+      <polygon points={dataPoints} fill="url(#radarFill)" stroke={diagram.blue} strokeWidth="2" />
       {skills.map((s, i) => {
         const [x, y] = point((s.value / MAX) * MAX_R, i, total);
-        return <circle key={i} cx={x} cy={y} r="3.5" fill="#6EC1FF" />;
+        return <circle key={i} cx={x} cy={y} r="3.5" fill={diagram.blue} />;
       })}
 
       {/* rótulos — suportam 1 ou 2 linhas, sem cortar */}
@@ -74,7 +76,7 @@ export function SkillRadar({ skills }: { skills: Skill[] }) {
             textAnchor={anchor}
             fontFamily="monospace"
             fontSize="12"
-            fill="#E4E7EC"
+            fill={palette.text}
             fontWeight="400"
           >
             {s.label.map((line, li) => (

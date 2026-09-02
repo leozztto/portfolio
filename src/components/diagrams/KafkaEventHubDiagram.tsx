@@ -1,13 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { palette, diagram } from "@/lib/theme";
 
 const producer = { x: 20, y: 168, w: 140, h: 60 };
 const broker = { x: 250, y: 130, w: 190, h: 140 };
 const consumers = [
-  { y: 40, title: "billing-service", sub: "billing.*", dot: "#3ECF8E" },
-  { y: 168, title: "notification-service", sub: "notify.*", dot: "#6EC1FF" },
-  { y: 296, title: "analytics-worker", sub: "analytics.*", dot: "#E8A33D" },
+  { y: 40, title: "billing-service", sub: "billing.*", dot: palette.success },
+  { y: 168, title: "notification-service", sub: "notify.*", dot: diagram.blue },
+  { y: 296, title: "analytics-worker", sub: "analytics.*", dot: palette.accent },
 ];
 const consumerX = 540;
 const consumerW = 170;
@@ -36,8 +37,8 @@ export function KafkaEventHubDiagram() {
     <div className="flex justify-center overflow-x-auto py-2">
       <svg viewBox="0 0 760 360" className="h-auto w-full min-w-[640px] max-w-[740px]">
         {/* produtor -> broker */}
-        <path d={producerToBroker} fill="none" stroke="#A78BFA" strokeWidth="1.6" strokeOpacity="0.6" />
-        <circle r="4" fill="#A78BFA">
+        <path d={producerToBroker} fill="none" stroke={diagram.purple} strokeWidth="1.6" strokeOpacity="0.6" />
+        <circle r="4" fill={diagram.purple}>
           {animate && <animateMotion dur="1.8s" repeatCount="indefinite" path={producerToBroker} />}
         </circle>
 
@@ -64,46 +65,46 @@ export function KafkaEventHubDiagram() {
         })}
 
         {/* Event Producer */}
-        <rect x={producer.x} y={producer.y} width={producer.w} height={producer.h} rx="9" fill="#171C27" stroke="#232935" />
-        <circle cx={producer.x + 14} cy={producer.y + 17} r="3" fill="#3ECF8E" />
-        <text x={producer.x + 23} y={producer.y + 21} fontFamily="monospace" fontSize="11" fill="#E4E7EC" fontWeight="600">
+        <rect x={producer.x} y={producer.y} width={producer.w} height={producer.h} rx="9" fill={palette.surfaceAlt} stroke={palette.border} />
+        <circle cx={producer.x + 14} cy={producer.y + 17} r="3" fill={palette.success} />
+        <text x={producer.x + 23} y={producer.y + 21} fontFamily="monospace" fontSize="11" fill={palette.text} fontWeight="600">
           payment-api
         </text>
-        <text x={producer.x + 14} y={producer.y + 42} fontFamily="monospace" fontSize="9" fill="#7C8494">
+        <text x={producer.x + 14} y={producer.y + 42} fontFamily="monospace" fontSize="9" fill={palette.muted}>
           Order / Payment
         </text>
 
         {/* Kafka Broker */}
-        <rect x={broker.x} y={broker.y} width={broker.w} height={broker.h} rx="10" fill="#12161F" stroke="#A78BFA" strokeWidth="1.4" />
-        <text x={broker.x + broker.w / 2} y={broker.y + 26} textAnchor="middle" fontFamily="monospace" fontSize="12" fill="#E4E7EC" fontWeight="600">
+        <rect x={broker.x} y={broker.y} width={broker.w} height={broker.h} rx="10" fill={palette.surface} stroke={diagram.purple} strokeWidth="1.4" />
+        <text x={broker.x + broker.w / 2} y={broker.y + 26} textAnchor="middle" fontFamily="monospace" fontSize="12" fill={palette.text} fontWeight="600">
           Kafka Broker
         </text>
-        <text x={broker.x + broker.w / 2} y={broker.y + 42} textAnchor="middle" fontFamily="monospace" fontSize="9" fill="#A78BFA">
+        <text x={broker.x + broker.w / 2} y={broker.y + 42} textAnchor="middle" fontFamily="monospace" fontSize="9" fill={diagram.purple}>
           topic.financial.events
         </text>
-        <text x={broker.x + broker.w / 2} y={broker.y + 62} textAnchor="middle" fontFamily="monospace" fontSize="8" fill="#7C8494">
+        <text x={broker.x + broker.w / 2} y={broker.y + 62} textAnchor="middle" fontFamily="monospace" fontSize="8" fill={palette.muted}>
           entrega paralela · mesma msg
         </text>
-        <line x1={broker.x + 16} y1={broker.y + 76} x2={broker.x + broker.w - 16} y2={broker.y + 76} stroke="#232935" />
-        <text x={broker.x + broker.w / 2} y={broker.y + 96} textAnchor="middle" fontFamily="monospace" fontSize="8.5" fill="#7C8494">
+        <line x1={broker.x + 16} y1={broker.y + 76} x2={broker.x + broker.w - 16} y2={broker.y + 76} stroke={palette.border} />
+        <text x={broker.x + broker.w / 2} y={broker.y + 96} textAnchor="middle" fontFamily="monospace" fontSize="8.5" fill={palette.muted}>
           consumidores também
         </text>
-        <text x={broker.x + broker.w / 2} y={broker.y + 110} textAnchor="middle" fontFamily="monospace" fontSize="8.5" fill="#7C8494">
+        <text x={broker.x + broker.w / 2} y={broker.y + 110} textAnchor="middle" fontFamily="monospace" fontSize="8.5" fill={palette.muted}>
           publicam de volta
         </text>
-        <text x={broker.x + broker.w / 2} y={broker.y + 124} textAnchor="middle" fontFamily="monospace" fontSize="8.5" fill="#7C8494">
+        <text x={broker.x + broker.w / 2} y={broker.y + 124} textAnchor="middle" fontFamily="monospace" fontSize="8.5" fill={palette.muted}>
           (pub/sub bidirecional)
         </text>
 
         {/* Consumers */}
         {consumers.map((c) => (
           <g key={c.title}>
-            <rect x={consumerX} y={c.y} width={consumerW} height={consumerH} rx="9" fill="#171C27" stroke="#232935" />
+            <rect x={consumerX} y={c.y} width={consumerW} height={consumerH} rx="9" fill={palette.surfaceAlt} stroke={palette.border} />
             <circle cx={consumerX + 14} cy={c.y + 17} r="3" fill={c.dot} />
-            <text x={consumerX + 23} y={c.y + 21} fontFamily="monospace" fontSize="10.5" fill="#E4E7EC" fontWeight="600">
+            <text x={consumerX + 23} y={c.y + 21} fontFamily="monospace" fontSize="10.5" fill={palette.text} fontWeight="600">
               {c.title}
             </text>
-            <text x={consumerX + 14} y={c.y + 42} fontFamily="monospace" fontSize="9" fill="#7C8494">
+            <text x={consumerX + 14} y={c.y + 42} fontFamily="monospace" fontSize="9" fill={palette.muted}>
               escuta · processa · {c.sub}
             </text>
           </g>
