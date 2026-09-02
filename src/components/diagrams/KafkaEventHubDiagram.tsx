@@ -3,21 +3,21 @@
 import { useEffect, useState } from "react";
 import { palette, diagram } from "@/lib/theme";
 
-const producer = { x: 20, y: 168, w: 140, h: 60 };
-const broker = { x: 250, y: 130, w: 190, h: 140 };
+const producer = { x: 8, y: 122, w: 218, h: 94 };
+const broker = { x: 286, y: 60, w: 296, h: 218 };
 const consumers = [
-  { y: 40, title: "billing-service", sub: "billing.*", dot: palette.success },
-  { y: 168, title: "notification-service", sub: "notify.*", dot: diagram.blue },
+  { y: 8, title: "billing-service", sub: "billing.*", dot: palette.success },
+  { y: 122, title: "notification-service", sub: "notify.*", dot: diagram.blue },
   {
-    y: 296,
+    y: 236,
     title: "analytics-worker",
     sub: "analytics.*",
     dot: palette.accent,
   },
 ];
-const consumerX = 540;
-const consumerW = 170;
-const consumerH = 60;
+const consumerX = 642;
+const consumerW = 265;
+const consumerH = 94;
 
 function curve(x1: number, y1: number, x2: number, y2: number) {
   const mx = (x1 + x2) / 2;
@@ -40,16 +40,16 @@ export function KafkaEventHubDiagram() {
 
   return (
     <div className="flex justify-center overflow-x-auto py-2">
-      <svg viewBox="0 0 760 360" className="h-auto w-full min-w-[640px] max-w-[740px]">
+      <svg viewBox="0 -60 930 457" className="h-auto w-full min-w-[760px] max-w-[1040px]">
         {/* produtor -> broker */}
         <path
           d={producerToBroker}
           fill="none"
           stroke={diagram.purple}
-          strokeWidth="1.6"
+          strokeWidth="1.8"
           strokeOpacity="0.6"
         />
-        <circle r="4" fill={diagram.purple}>
+        <circle r="5" fill={diagram.purple}>
           {animate && <animateMotion dur="1.8s" repeatCount="indefinite" path={producerToBroker} />}
         </circle>
 
@@ -63,22 +63,22 @@ export function KafkaEventHubDiagram() {
           );
           const back = curve(
             consumerX,
-            c.y + consumerH / 2 + 8,
+            c.y + consumerH / 2 + 13,
             broker.x + broker.w,
-            broker.y + broker.h / 2 + 8,
+            broker.y + broker.h / 2 + 13,
           );
           return (
             <g key={c.title}>
-              <path d={out} fill="none" stroke={c.dot} strokeWidth="1.3" strokeOpacity="0.5" />
+              <path d={out} fill="none" stroke={c.dot} strokeWidth="1.6" strokeOpacity="0.5" />
               <path
                 d={back}
                 fill="none"
                 stroke={c.dot}
-                strokeWidth="1"
+                strokeWidth="1.2"
                 strokeOpacity="0.28"
-                strokeDasharray="3 3"
+                strokeDasharray="4 4"
               />
-              <circle r="3.5" fill={c.dot}>
+              <circle r="4.5" fill={c.dot}>
                 {animate && (
                   <animateMotion
                     dur={`${1.6 + i * 0.3}s`}
@@ -88,7 +88,7 @@ export function KafkaEventHubDiagram() {
                   />
                 )}
               </circle>
-              <circle r="2.5" fill={c.dot} opacity="0.7">
+              <circle r="3.2" fill={c.dot} opacity="0.7">
                 {animate && (
                   <animateMotion
                     dur={`${2.2 + i * 0.3}s`}
@@ -108,26 +108,26 @@ export function KafkaEventHubDiagram() {
           y={producer.y}
           width={producer.w}
           height={producer.h}
-          rx="9"
+          rx="14"
           fill={palette.surfaceAlt}
           stroke={palette.border}
         />
-        <circle cx={producer.x + 14} cy={producer.y + 17} r="3" fill={palette.success} />
+        <circle cx={producer.x + 21} cy={producer.y + 26} r="4.7" fill={palette.success} />
         <text
-          x={producer.x + 23}
-          y={producer.y + 21}
+          x={producer.x + 35}
+          y={producer.y + 32}
           fontFamily="monospace"
-          fontSize="11"
+          fontSize="17"
           fill={palette.text}
           fontWeight="600"
         >
           payment-api
         </text>
         <text
-          x={producer.x + 14}
-          y={producer.y + 42}
+          x={producer.x + 21}
+          y={producer.y + 65}
           fontFamily="monospace"
-          fontSize="9"
+          fontSize="13.5"
           fill={palette.muted}
         >
           Order / Payment
@@ -139,17 +139,17 @@ export function KafkaEventHubDiagram() {
           y={broker.y}
           width={broker.w}
           height={broker.h}
-          rx="10"
+          rx="16"
           fill={palette.surface}
           stroke={diagram.purple}
-          strokeWidth="1.4"
+          strokeWidth="1.8"
         />
         <text
           x={broker.x + broker.w / 2}
-          y={broker.y + 26}
+          y={broker.y + 40}
           textAnchor="middle"
           fontFamily="monospace"
-          fontSize="12"
+          fontSize="18"
           fill={palette.text}
           fontWeight="600"
         >
@@ -157,57 +157,57 @@ export function KafkaEventHubDiagram() {
         </text>
         <text
           x={broker.x + broker.w / 2}
-          y={broker.y + 42}
+          y={broker.y + 65}
           textAnchor="middle"
           fontFamily="monospace"
-          fontSize="9"
+          fontSize="13.5"
           fill={diagram.purple}
         >
           topic.financial.events
         </text>
         <text
           x={broker.x + broker.w / 2}
-          y={broker.y + 62}
+          y={broker.y + 96}
           textAnchor="middle"
           fontFamily="monospace"
-          fontSize="8"
+          fontSize="12"
           fill={palette.muted}
         >
           entrega paralela · mesma msg
         </text>
         <line
-          x1={broker.x + 16}
-          y1={broker.y + 76}
-          x2={broker.x + broker.w - 16}
-          y2={broker.y + 76}
+          x1={broker.x + 24}
+          y1={broker.y + 118}
+          x2={broker.x + broker.w - 24}
+          y2={broker.y + 118}
           stroke={palette.border}
         />
         <text
           x={broker.x + broker.w / 2}
-          y={broker.y + 96}
+          y={broker.y + 150}
           textAnchor="middle"
           fontFamily="monospace"
-          fontSize="8.5"
+          fontSize="13"
           fill={palette.muted}
         >
           consumidores também
         </text>
         <text
           x={broker.x + broker.w / 2}
-          y={broker.y + 110}
+          y={broker.y + 172}
           textAnchor="middle"
           fontFamily="monospace"
-          fontSize="8.5"
+          fontSize="13"
           fill={palette.muted}
         >
           publicam de volta
         </text>
         <text
           x={broker.x + broker.w / 2}
-          y={broker.y + 124}
+          y={broker.y + 194}
           textAnchor="middle"
           fontFamily="monospace"
-          fontSize="8.5"
+          fontSize="13"
           fill={palette.muted}
         >
           (pub/sub bidirecional)
@@ -221,26 +221,26 @@ export function KafkaEventHubDiagram() {
               y={c.y}
               width={consumerW}
               height={consumerH}
-              rx="9"
+              rx="14"
               fill={palette.surfaceAlt}
               stroke={palette.border}
             />
-            <circle cx={consumerX + 14} cy={c.y + 17} r="3" fill={c.dot} />
+            <circle cx={consumerX + 21} cy={c.y + 26} r="4.7" fill={c.dot} />
             <text
-              x={consumerX + 23}
-              y={c.y + 21}
+              x={consumerX + 35}
+              y={c.y + 32}
               fontFamily="monospace"
-              fontSize="10.5"
+              fontSize="16"
               fill={palette.text}
               fontWeight="600"
             >
               {c.title}
             </text>
             <text
-              x={consumerX + 14}
-              y={c.y + 42}
+              x={consumerX + 21}
+              y={c.y + 65}
               fontFamily="monospace"
-              fontSize="9"
+              fontSize="13.5"
               fill={palette.muted}
             >
               escuta · processa · {c.sub}

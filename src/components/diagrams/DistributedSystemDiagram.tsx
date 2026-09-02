@@ -16,83 +16,83 @@ type Node = {
 
 const nodes: Record<string, Node> = {
   clients: {
-    x: 20,
-    y: 195,
-    w: 120,
-    h: 54,
+    x: 8,
+    y: 273,
+    w: 187,
+    h: 85,
     title: "Clients",
     sub: "Web / App",
     dot: palette.success,
   },
   auth: {
-    x: 490,
-    y: 25,
-    w: 140,
-    h: 50,
+    x: 600,
+    y: 8,
+    w: 218,
+    h: 78,
     title: "auth-api",
     sub: "JWT · OAuth2",
     dot: palette.muted,
   },
   gateway: {
-    x: 250,
-    y: 195,
-    w: 140,
-    h: 56,
+    x: 300,
+    y: 271,
+    w: 218,
+    h: 88,
     title: "api-gateway",
     sub: "Routing · Rate limit",
     dot: diagram.blue,
     highlight: true,
   },
   clientes: {
-    x: 490,
-    y: 100,
-    w: 150,
-    h: 52,
+    x: 600,
+    y: 110,
+    w: 234,
+    h: 80,
     title: "clientes-service",
     sub: "Customers",
     dot: diagram.blue,
   },
   produtos: {
-    x: 490,
-    y: 170,
-    w: 150,
-    h: 52,
+    x: 600,
+    y: 220,
+    w: 234,
+    h: 80,
     title: "produtos-service",
     sub: "Products",
     dot: diagram.blue,
   },
   vendas: {
-    x: 490,
-    y: 240,
-    w: 150,
-    h: 52,
+    x: 600,
+    y: 330,
+    w: 234,
+    h: 80,
     title: "vendas-service",
     sub: "Sales",
     dot: diagram.blue,
   },
   notificacao: {
-    x: 490,
-    y: 310,
-    w: 150,
-    h: 52,
+    x: 600,
+    y: 440,
+    w: 234,
+    h: 80,
     title: "notificacao-service",
     sub: "Notifications",
     dot: diagram.blue,
   },
   redis: {
-    x: 700,
-    y: 130,
-    w: 130,
-    h: 54,
+    x: 900,
+    y: 150,
+    w: 203,
+    h: 85,
     title: "Redis Cache",
     sub: "compartilhado",
     dot: palette.accent,
   },
   kafka: {
-    x: 700,
-    y: 235,
-    w: 130,
-    h: 54,
+    x: 900,
+    y: 350,
+    w: 203,
+    h: 85,
     title: "Kafka Broker",
     sub: "publica evento",
     dot: diagram.purple,
@@ -132,15 +132,15 @@ function Box({ n }: { n: Node }) {
     <g>
       {n.highlight && (
         <rect
-          x={n.x - 3}
-          y={n.y - 3}
-          width={n.w + 6}
-          height={n.h + 6}
-          rx={11}
+          x={n.x - 5}
+          y={n.y - 5}
+          width={n.w + 10}
+          height={n.h + 10}
+          rx={16}
           fill="none"
           stroke={diagram.blue}
           strokeOpacity="0.25"
-          strokeWidth="4"
+          strokeWidth="6"
         />
       )}
       <rect
@@ -148,27 +148,27 @@ function Box({ n }: { n: Node }) {
         y={n.y}
         width={n.w}
         height={n.h}
-        rx={9}
+        rx={14}
         fill={n.highlight ? palette.surface : palette.surfaceAlt}
         stroke={n.highlight ? diagram.blue : palette.border}
-        strokeWidth={n.highlight ? 1.6 : 1}
+        strokeWidth={n.highlight ? 2.4 : 1.5}
       />
-      <circle cx={n.x + 14} cy={n.y + 17} r="3" fill={n.dot} />
+      <circle cx={n.x + 20} cy={n.y + 25} r="4.5" fill={n.dot} />
       <text
-        x={n.x + 23}
-        y={n.y + 21}
+        x={n.x + 34}
+        y={n.y + 31}
         fontFamily="monospace"
-        fontSize="11"
+        fontSize="16.5"
         fill={palette.text}
         fontWeight="600"
       >
         {n.title}
       </text>
       <text
-        x={n.x + 14}
-        y={n.y + n.h - 11}
+        x={n.x + 20}
+        y={n.y + n.h - 16}
         fontFamily="monospace"
-        fontSize="9"
+        fontSize="13"
         fill={palette.muted}
       >
         {n.sub}
@@ -186,25 +186,18 @@ export function DistributedSystemDiagram() {
 
   return (
     <div className="flex justify-center overflow-x-auto py-2">
-      <svg viewBox="0 0 860 390" className="h-auto w-full min-w-[680px] max-w-[820px]">
+      <svg viewBox="0 0 1120 550" className="h-auto w-full min-w-[760px] max-w-[1040px]">
         {connections.map((c, i) => {
           const { d } = edge(nodes[c.from], nodes[c.to]);
           return (
-            <path
-              key={i}
-              d={d}
-              fill="none"
-              stroke={c.color}
-              strokeWidth="1.4"
-              strokeOpacity="0.55"
-            />
+            <path key={i} d={d} fill="none" stroke={c.color} strokeWidth="2" strokeOpacity="0.55" />
           );
         })}
 
         {connections.map((c, i) => {
           const { d } = edge(nodes[c.from], nodes[c.to]);
           return (
-            <circle key={`dot-${i}`} r="3.5" fill={c.color}>
+            <circle key={`dot-${i}`} r="5" fill={c.color}>
               {animate && (
                 <animateMotion
                   dur={`${2.2 + (i % 3) * 0.4}s`}

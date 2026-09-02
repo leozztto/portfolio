@@ -19,7 +19,7 @@ export function ExperienceTimeline({ entries }: { entries: ChangelogEntry[] }) {
               <div>
                 <p className="font-mono text-xs text-accent">{entry.version}</p>
                 <h3 className="mt-0.5 font-display text-lg font-bold">
-                  {entry.company} - {entry.role}
+                  {entry.company} <span className="font-normal">- {entry.role}</span>
                 </h3>
                 <p className="mt-1 font-mono text-xs text-muted/70">{entry.date}</p>
               </div>

@@ -14,11 +14,11 @@ export function Contact() {
           <span className="h-1.5 w-1.5 rounded-full bg-success" />
           Aberto a oportunidades
         </p>
-        <p className="mt-2 max-w-xl font-display text-xl font-bold text-text">
+        <p className="mt-2 max-w-xl font-display text-xl text-text">
           100% remotas como Senior Software Engineer, Senior Backend Engineer
         </p>
         <p className="mt-2 max-w-xl text-xs text-muted">
-          Preferência por CLT. Avalio propostas PJ conforme escopo e contexto.
+          Preferência por CLT. Avalio propostas PJ.
         </p>
       </Reveal>
 

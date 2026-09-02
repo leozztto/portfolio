@@ -9,7 +9,7 @@ export function Architecture() {
         <SectionHeader method="GET" route="/arquitetura" title="Arquitetura" />
       </Reveal>
 
-      <div className="mt-8 grid gap-10 lg:grid-cols-[340px_1fr] lg:items-start">
+      <div className="mt-8 grid gap-8 lg:grid-cols-[300px_1fr] lg:items-start">
         <Reveal delay={80}>
           <p className="font-mono text-xs uppercase tracking-widest text-accent">
             Como penso arquitetura
