@@ -13,8 +13,7 @@ export const problemsSolved: ProblemSolved[] = [
   },
   {
     title: "Arquitetura orientada a eventos",
-    description:
-      "Kafka e RabbitMQ para desacoplar sistemas e processar alto volume de eventos.",
+    description: "Kafka e RabbitMQ para desacoplar sistemas e processar alto volume de eventos.",
   },
   {
     title: "Consistência de dados",
@@ -23,8 +22,7 @@ export const problemsSolved: ProblemSolved[] = [
   },
   {
     title: "Escalabilidade e alta disponibilidade",
-    description:
-      "Deploy em Kubernetes sobre AWS e GCP com foco em resiliência operacional.",
+    description: "Deploy em Kubernetes sobre AWS e GCP com foco em resiliência operacional.",
   },
   {
     title: "CI/CD e qualidade técnica",

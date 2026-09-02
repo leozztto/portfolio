@@ -11,9 +11,8 @@ export function WorkingStyle() {
       </Reveal>
       <Reveal delay={80}>
         <p className="mb-10 text-base text-muted">
-          Minha atuação combina desenvolvimento hands-on e arquitetura,
-          transformando problemas de negócio em sistemas confiáveis, escaláveis
-          e fáceis de evoluir.
+          Minha atuação combina desenvolvimento hands-on e arquitetura, transformando problemas de
+          negócio em sistemas confiáveis, escaláveis e fáceis de evoluir.
         </p>
       </Reveal>
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -48,9 +47,7 @@ export function WorkingStyle() {
           <p className="font-mono text-xs uppercase tracking-widest text-accent">
             Foco em resultado
           </p>
-          <h3 className="mt-1 mb-8 font-display text-xl font-bold">
-            Problemas que resolvo
-          </h3>
+          <h3 className="mb-8 mt-1 font-display text-xl font-bold">Problemas que resolvo</h3>
         </Reveal>
         <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2">
           {problemsSolved.map((item, i) => (

@@ -3,18 +3,100 @@
 import { useEffect, useState } from "react";
 import { palette, diagram } from "@/lib/theme";
 
-type Node = { x: number; y: number; w: number; h: number; title: string; sub: string; dot: string; highlight?: boolean };
+type Node = {
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+  title: string;
+  sub: string;
+  dot: string;
+  highlight?: boolean;
+};
 
 const nodes: Record<string, Node> = {
-  clients: { x: 20, y: 195, w: 120, h: 54, title: "Clients", sub: "Web / App", dot: palette.success },
-  auth: { x: 490, y: 25, w: 140, h: 50, title: "auth-api", sub: "JWT · OAuth2", dot: palette.muted },
-  gateway: { x: 250, y: 195, w: 140, h: 56, title: "api-gateway", sub: "Routing · Rate limit", dot: diagram.blue, highlight: true },
-  clientes: { x: 490, y: 100, w: 150, h: 52, title: "clientes-service", sub: "Customers", dot: diagram.blue },
-  produtos: { x: 490, y: 170, w: 150, h: 52, title: "produtos-service", sub: "Products", dot: diagram.blue },
-  vendas: { x: 490, y: 240, w: 150, h: 52, title: "vendas-service", sub: "Sales", dot: diagram.blue },
-  notificacao: { x: 490, y: 310, w: 150, h: 52, title: "notificacao-service", sub: "Notifications", dot: diagram.blue },
-  redis: { x: 700, y: 130, w: 130, h: 54, title: "Redis Cache", sub: "compartilhado", dot: palette.accent },
-  kafka: { x: 700, y: 235, w: 130, h: 54, title: "Kafka Broker", sub: "publica evento", dot: diagram.purple },
+  clients: {
+    x: 20,
+    y: 195,
+    w: 120,
+    h: 54,
+    title: "Clients",
+    sub: "Web / App",
+    dot: palette.success,
+  },
+  auth: {
+    x: 490,
+    y: 25,
+    w: 140,
+    h: 50,
+    title: "auth-api",
+    sub: "JWT · OAuth2",
+    dot: palette.muted,
+  },
+  gateway: {
+    x: 250,
+    y: 195,
+    w: 140,
+    h: 56,
+    title: "api-gateway",
+    sub: "Routing · Rate limit",
+    dot: diagram.blue,
+    highlight: true,
+  },
+  clientes: {
+    x: 490,
+    y: 100,
+    w: 150,
+    h: 52,
+    title: "clientes-service",
+    sub: "Customers",
+    dot: diagram.blue,
+  },
+  produtos: {
+    x: 490,
+    y: 170,
+    w: 150,
+    h: 52,
+    title: "produtos-service",
+    sub: "Products",
+    dot: diagram.blue,
+  },
+  vendas: {
+    x: 490,
+    y: 240,
+    w: 150,
+    h: 52,
+    title: "vendas-service",
+    sub: "Sales",
+    dot: diagram.blue,
+  },
+  notificacao: {
+    x: 490,
+    y: 310,
+    w: 150,
+    h: 52,
+    title: "notificacao-service",
+    sub: "Notifications",
+    dot: diagram.blue,
+  },
+  redis: {
+    x: 700,
+    y: 130,
+    w: 130,
+    h: 54,
+    title: "Redis Cache",
+    sub: "compartilhado",
+    dot: palette.accent,
+  },
+  kafka: {
+    x: 700,
+    y: 235,
+    w: 130,
+    h: 54,
+    title: "Kafka Broker",
+    sub: "publica evento",
+    dot: diagram.purple,
+  },
 };
 
 function edge(a: Node, b: Node) {
@@ -23,10 +105,17 @@ function edge(a: Node, b: Node) {
   const x2 = b.x;
   const y2 = b.y + b.h / 2;
   const mx = (x1 + x2) / 2;
-  return { d: `M ${x1} ${y1} C ${mx} ${y1}, ${mx} ${y2}, ${x2} ${y2}`, color: undefined as string | undefined };
+  return {
+    d: `M ${x1} ${y1} C ${mx} ${y1}, ${mx} ${y2}, ${x2} ${y2}`,
+    color: undefined as string | undefined,
+  };
 }
 
-const connections: { from: keyof typeof nodes; to: keyof typeof nodes; color: string }[] = [
+const connections: {
+  from: keyof typeof nodes;
+  to: keyof typeof nodes;
+  color: string;
+}[] = [
   { from: "clients", to: "gateway", color: diagram.blue },
   { from: "gateway", to: "auth", color: palette.muted },
   { from: "gateway", to: "clientes", color: diagram.blue },
@@ -65,10 +154,23 @@ function Box({ n }: { n: Node }) {
         strokeWidth={n.highlight ? 1.6 : 1}
       />
       <circle cx={n.x + 14} cy={n.y + 17} r="3" fill={n.dot} />
-      <text x={n.x + 23} y={n.y + 21} fontFamily="monospace" fontSize="11" fill={palette.text} fontWeight="600">
+      <text
+        x={n.x + 23}
+        y={n.y + 21}
+        fontFamily="monospace"
+        fontSize="11"
+        fill={palette.text}
+        fontWeight="600"
+      >
         {n.title}
       </text>
-      <text x={n.x + 14} y={n.y + n.h - 11} fontFamily="monospace" fontSize="9" fill={palette.muted}>
+      <text
+        x={n.x + 14}
+        y={n.y + n.h - 11}
+        fontFamily="monospace"
+        fontSize="9"
+        fill={palette.muted}
+      >
         {n.sub}
       </text>
     </g>
@@ -88,7 +190,14 @@ export function DistributedSystemDiagram() {
         {connections.map((c, i) => {
           const { d } = edge(nodes[c.from], nodes[c.to]);
           return (
-            <path key={i} d={d} fill="none" stroke={c.color} strokeWidth="1.4" strokeOpacity="0.55" />
+            <path
+              key={i}
+              d={d}
+              fill="none"
+              stroke={c.color}
+              strokeWidth="1.4"
+              strokeOpacity="0.55"
+            />
           );
         })}
 

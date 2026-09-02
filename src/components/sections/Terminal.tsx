@@ -33,9 +33,7 @@ export function Terminal() {
         <span className="h-3 w-3 rounded-full bg-error/70" />
         <span className="h-3 w-3 rounded-full bg-accent/70" />
         <span className="h-3 w-3 rounded-full bg-success/70" />
-        <span className="ml-3 font-mono text-xs text-muted">
-          zsh — GET /api/status
-        </span>
+        <span className="ml-3 font-mono text-xs text-muted">zsh — GET /api/status</span>
       </div>
       <div className="p-5 font-mono text-sm leading-relaxed">
         <p className="text-muted">
@@ -48,8 +46,10 @@ export function Terminal() {
         )}
         {loaded && data && (
           <pre className="mt-2 whitespace-pre-wrap text-text">
-{`{
-  "status": "`}<span className="text-success">{data.status}</span>{`",
+            {`{
+  "status": "`}
+            <span className="text-success">{data.status}</span>
+            {`",
   "name": "${data.name}",
   "role": "${data.role}",
   "location": "${data.location}",

@@ -24,8 +24,7 @@ export function Nav({ items }: { items: NavItem[] }) {
       for (const s of sections) {
         if (s.offsetTop <= scrollPos) current = s;
       }
-      const nearBottom =
-        window.innerHeight + window.scrollY >= document.body.scrollHeight - 4;
+      const nearBottom = window.innerHeight + window.scrollY >= document.body.scrollHeight - 4;
       if (nearBottom) current = sections[sections.length - 1];
 
       if (current) setActive(`#${current.id}`);
@@ -79,9 +78,7 @@ export function Nav({ items }: { items: NavItem[] }) {
           <span className="block max-w-[150px] truncate font-display text-sm font-bold text-text sm:max-w-none">
             Leandro Menegazzo Franceschetto
           </span>
-          <span className="block font-mono text-[10px] text-muted">
-            Software Engineering
-          </span>
+          <span className="block font-mono text-[10px] text-muted">Software Engineering</span>
         </span>
       </a>
 
@@ -97,11 +94,18 @@ export function Nav({ items }: { items: NavItem[] }) {
           aria-expanded={open}
           className="flex items-center gap-2 rounded-full border border-border bg-surface-alt px-3.5 py-1.5 font-mono text-xs text-text transition hover:border-accent/40"
         >
-          <span className={activeItem.method === "GET" ? "font-bold text-success" : "font-bold text-accent"}>
+          <span
+            className={
+              activeItem.method === "GET" ? "font-bold text-success" : "font-bold text-accent"
+            }
+          >
             {activeItem.method}
           </span>
           <span>{activeItem.route}</span>
-          <span className={`text-muted transition-transform ${open ? "rotate-180" : ""}`} aria-hidden>
+          <span
+            className={`text-muted transition-transform ${open ? "rotate-180" : ""}`}
+            aria-hidden
+          >
             ⌄
           </span>
         </button>
@@ -110,7 +114,9 @@ export function Nav({ items }: { items: NavItem[] }) {
             morto entre o botão e a lista — hover continua detectável */}
         <div
           className={`absolute right-0 top-full z-50 w-60 pt-2 transition-all duration-150 ${
-            open ? "pointer-events-auto translate-y-0 opacity-100" : "pointer-events-none -translate-y-1 opacity-0"
+            open
+              ? "pointer-events-auto translate-y-0 opacity-100"
+              : "pointer-events-none -translate-y-1 opacity-0"
           }`}
         >
           <div className="overflow-hidden rounded-lg border border-border bg-surface shadow-xl shadow-black/40">
@@ -122,10 +128,16 @@ export function Nav({ items }: { items: NavItem[] }) {
                   href={item.href}
                   onClick={() => setOpen(false)}
                   className={`flex items-center gap-2 px-4 py-2.5 font-mono text-xs transition ${
-                    isActive ? "bg-accent/10 text-text" : "text-muted hover:bg-surface-alt hover:text-text"
+                    isActive
+                      ? "bg-accent/10 text-text"
+                      : "text-muted hover:bg-surface-alt hover:text-text"
                   }`}
                 >
-                  <span className={item.method === "GET" ? "font-bold text-success" : "font-bold text-accent"}>
+                  <span
+                    className={
+                      item.method === "GET" ? "font-bold text-success" : "font-bold text-accent"
+                    }
+                  >
                     {item.method}
                   </span>
                   <span>{item.route}</span>

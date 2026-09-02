@@ -29,9 +29,7 @@ export function NeuralNetwork() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    const prefersReduced = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     let width = 0;
     let height = 0;
@@ -216,11 +214,7 @@ export function NeuralNetwork() {
 
   return (
     <div ref={containerRef} className="absolute inset-0 z-0">
-      <canvas
-        ref={canvasRef}
-        className="h-full w-full cursor-pointer"
-        aria-hidden="true"
-      />
+      <canvas ref={canvasRef} className="h-full w-full cursor-pointer" aria-hidden="true" />
     </div>
   );
 }

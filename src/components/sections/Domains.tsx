@@ -10,9 +10,9 @@ export function Domains() {
       </Reveal>
       <Reveal delay={80}>
         <p className="mb-10 text-base text-muted">
-          Confiabilidade onde a tolerância a falhas é mínima — experiência em
-          setores onde disponibilidade e integridade de dados são requisitos
-          de negócio, não apenas requisitos técnicos.
+          Confiabilidade onde a tolerância a falhas é mínima — experiência em setores onde
+          disponibilidade e integridade de dados são requisitos de negócio, não apenas requisitos
+          técnicos.
         </p>
       </Reveal>
       <div className="grid gap-6 sm:grid-cols-3">
@@ -25,9 +25,7 @@ export function Domains() {
             <p className="font-mono text-2xl font-bold text-accent/60">
               {String(i + 1).padStart(2, "0")}
             </p>
-            <p className="mt-2 font-mono text-[10px] uppercase tracking-widest text-muted">
-              Setor
-            </p>
+            <p className="mt-2 font-mono text-[10px] uppercase tracking-widest text-muted">Setor</p>
             <h3 className="mt-1 font-display text-base font-bold">{domain.sector}</h3>
             <p className="mt-1 font-mono text-[11px] text-muted">{domain.companies}</p>
             <p className="mt-3 text-sm text-muted">{domain.detail}</p>

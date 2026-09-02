@@ -11,8 +11,8 @@ export function Projects() {
       </Reveal>
       <Reveal delay={80}>
         <p className="mb-10 text-base text-muted">
-          Sistemas construídos e mantidos por mim — do design da API à
-          persistência e ao processamento assíncrono.
+          Sistemas construídos e mantidos por mim — do design da API à persistência e ao
+          processamento assíncrono.
         </p>
       </Reveal>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

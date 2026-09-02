@@ -21,29 +21,26 @@ export function About() {
         <div>
           <Reveal delay={200}>
             <p className="max-w-2xl text-muted">
-              Atuo com back-end há oito anos, boa parte desse tempo em
-              sistemas críticos, que exigem alta resiliência: pagamentos, mensageria
-              financeira e plataformas de alto volume transacional. Tenho grande
-              preocupação em decisões de arquitetura que visam garantir a estabilidade
-              do sistema sob carga real.
+              Atuo com back-end há oito anos, boa parte desse tempo em sistemas críticos, que exigem
+              alta resiliência: pagamentos, mensageria financeira e plataformas de alto volume
+              transacional. Tenho grande preocupação em decisões de arquitetura que visam garantir a
+              estabilidade do sistema sob carga real.
             </p>
           </Reveal>
           <Reveal delay={250}>
             <p className="mt-4 max-w-2xl text-muted">
-              No dia a dia isso se traduz em tecnologias como Java e Kotlin
-              com Spring Boot, Kafka para mensageria e aplicações Event-Driven
-              e deploys em Kubernetes sobre plataformas como AWS e GCP.
-              Escalabilidade e consistência de dados guiam praticamente toda
-              decisão técnica que tomo.
+              No dia a dia isso se traduz em tecnologias como Java e Kotlin com Spring Boot, Kafka
+              para mensageria e aplicações Event-Driven e deploys em Kubernetes sobre plataformas
+              como AWS e GCP. Escalabilidade e consistência de dados guiam praticamente toda decisão
+              técnica que tomo.
             </p>
           </Reveal>
           <Reveal delay={300}>
             <p className="mt-4 max-w-2xl text-muted">
-              Agora estou expandindo esse repertório para Inteligência
-              Artificial, numa pós-graduação focada em Java aplicado a
-              agentes de IA — a ideia é levar essa camada para os mesmos
-              sistemas críticos onde já atuo e acelerar o desenvolvimento
-              melhorando a visibilidade arquitetural.
+              Agora estou expandindo esse repertório para Inteligência Artificial, numa
+              pós-graduação focada em Java aplicado a agentes de IA — a ideia é levar essa camada
+              para os mesmos sistemas críticos onde já atuo e acelerar o desenvolvimento melhorando
+              a visibilidade arquitetural.
             </p>
           </Reveal>
 
@@ -63,18 +60,18 @@ export function About() {
 
           <Reveal delay={400}>
             <div className="mt-8">
-              <p className="mb-2 font-mono text-xs uppercase tracking-widest text-muted">
-                Stack
-              </p>
+              <p className="mb-2 font-mono text-xs uppercase tracking-widest text-muted">Stack</p>
               <div className="flex flex-wrap gap-2">
-                {stack.flatMap((g) => g.items).map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-full border border-border px-2.5 py-1 font-mono text-[11px] text-muted"
-                  >
-                    {item}
-                  </span>
-                ))}
+                {stack
+                  .flatMap((g) => g.items)
+                  .map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-border px-2.5 py-1 font-mono text-[11px] text-muted"
+                    >
+                      {item}
+                    </span>
+                  ))}
               </div>
             </div>
           </Reveal>

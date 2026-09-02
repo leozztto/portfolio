@@ -15,8 +15,7 @@ export const workingStyle: WorkingStyleItem[] = [
   },
   {
     title: "Cloud & infraestrutura",
-    description:
-      "Deploy e operação em Kubernetes sobre AWS, GCP e data centers próprios.",
+    description: "Deploy e operação em Kubernetes sobre AWS, GCP e data centers próprios.",
     tags: ["AWS", "GCP", "Kubernetes", "Docker"],
   },
   {

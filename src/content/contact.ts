@@ -12,6 +12,12 @@ export const contactLinks: ContactLink[] = [
     primary: true,
   },
   { label: siteConfig.email, href: `mailto:${siteConfig.email}` },
-  { label: siteConfig.social.linkedin.label, href: siteConfig.social.linkedin.href },
-  { label: siteConfig.social.github.label, href: siteConfig.social.github.href },
+  {
+    label: siteConfig.social.linkedin.label,
+    href: siteConfig.social.linkedin.href,
+  },
+  {
+    label: siteConfig.social.github.label,
+    href: siteConfig.social.github.href,
+  },
 ];

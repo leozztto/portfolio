@@ -23,6 +23,10 @@ export const criticalDomains: CriticalDomain[] = [
     companies: "Limber Software · LZ Consultoria",
     detail:
       "Conversão e migração de dados entre PostgreSQL, Firebird, MySQL e Oracle em ambientes de produção.",
-    highlights: ["PostgreSQL · Firebird · MySQL · Oracle", "ETL & conversão", "Implantação e suporte"],
+    highlights: [
+      "PostgreSQL · Firebird · MySQL · Oracle",
+      "ETL & conversão",
+      "Implantação e suporte",
+    ],
   },
 ];
