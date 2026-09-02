@@ -3,7 +3,7 @@
 import { useState } from "react";
 import type { ChangelogEntry } from "@/types/content";
 
-export default function ExperienceTimeline({ entries }: { entries: ChangelogEntry[] }) {
+export function ExperienceTimeline({ entries }: { entries: ChangelogEntry[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (

@@ -13,7 +13,7 @@ type Status = {
   contact: string;
 };
 
-export default function Terminal() {
+export function Terminal() {
   const [data, setData] = useState<Status | null>(null);
   const [loaded, setLoaded] = useState(false);
 

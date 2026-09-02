@@ -18,7 +18,7 @@ function curve(x1: number, y1: number, x2: number, y2: number) {
   return `M ${x1} ${y1} C ${mx} ${y1}, ${mx} ${y2}, ${x2} ${y2}`;
 }
 
-export default function KafkaEventHubDiagram() {
+export function KafkaEventHubDiagram() {
   const [animate, setAnimate] = useState(true);
 
   useEffect(() => {

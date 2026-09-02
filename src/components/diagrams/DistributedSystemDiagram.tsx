@@ -74,7 +74,7 @@ function Box({ n }: { n: Node }) {
   );
 }
 
-export default function DistributedSystemDiagram() {
+export function DistributedSystemDiagram() {
   const [animate, setAnimate] = useState(true);
 
   useEffect(() => {

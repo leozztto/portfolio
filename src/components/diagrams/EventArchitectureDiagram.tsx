@@ -1,4 +1,4 @@
-export default function EventArchitectureDiagram() {
+export function EventArchitectureDiagram() {
   return (
     <svg
       viewBox="0 0 760 320"

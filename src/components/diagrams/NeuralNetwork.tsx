@@ -18,7 +18,7 @@ type Node = {
 // Nós "hub" recebem rótulo — troque pelas suas tecnologias principais.
 const HUB_LABELS = ["Java", "Spring Boot", "Kafka", "Kubernetes", "AWS", "PostgreSQL"];
 
-export default function NeuralNetwork() {
+export function NeuralNetwork() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 

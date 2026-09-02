@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 
 type NavItem = { method: string; route: string; href: string };
 
-export default function Nav({ items }: { items: NavItem[] }) {
+export function Nav({ items }: { items: NavItem[] }) {
   const [active, setActive] = useState<string>(items[0]?.href ?? "");
   const [open, setOpen] = useState(false);
   const tickingRef = useRef(false);

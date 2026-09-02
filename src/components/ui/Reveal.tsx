@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-export default function Reveal({
+export function Reveal({
   children,
   delay = 0,
   className = "",

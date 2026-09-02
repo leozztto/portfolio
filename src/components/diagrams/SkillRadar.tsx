@@ -18,7 +18,7 @@ function anchorFor(x: number) {
   return "middle";
 }
 
-export default function SkillRadar({ skills }: { skills: Skill[] }) {
+export function SkillRadar({ skills }: { skills: Skill[] }) {
   const total = skills.length;
   const rings = [0.25, 0.5, 0.75, 1];
 

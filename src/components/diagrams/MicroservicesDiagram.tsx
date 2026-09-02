@@ -1,4 +1,4 @@
-export default function MicroservicesDiagram() {
+export function MicroservicesDiagram() {
   return (
     <svg
       viewBox="0 0 760 340"

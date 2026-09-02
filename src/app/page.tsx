@@ -1,10 +1,10 @@
-import Terminal from "@/components/Terminal";
-import Reveal from "@/components/Reveal";
-import NeuralNetwork from "@/components/NeuralNetwork";
-import Nav from "@/components/Nav";
-import ExperienceTimeline from "@/components/ExperienceTimeline";
-import ArchitectureExplorer from "@/components/ArchitectureExplorer";
-import SkillRadar from "@/components/SkillRadar";
+import { Nav } from "@/components/layout/Nav";
+import { Reveal } from "@/components/ui/Reveal";
+import { Terminal } from "@/components/sections/Terminal";
+import { ExperienceTimeline } from "@/components/sections/ExperienceTimeline";
+import { NeuralNetwork } from "@/components/diagrams/NeuralNetwork";
+import { SkillRadar } from "@/components/diagrams/SkillRadar";
+import { ArchitectureExplorer } from "@/components/diagrams/ArchitectureExplorer";
 import { siteConfig } from "@/config/site";
 import { nav } from "@/content/navigation";
 import { stack } from "@/content/stack";

@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import DistributedSystemDiagram from "./DistributedSystemDiagram";
-import KafkaEventHubDiagram from "./KafkaEventHubDiagram";
+import { DistributedSystemDiagram } from "./DistributedSystemDiagram";
+import { KafkaEventHubDiagram } from "./KafkaEventHubDiagram";
 
-export default function ArchitectureExplorer() {
+export function ArchitectureExplorer() {
   const [tab, setTab] = useState<"distributed" | "kafka">("distributed");
 
   const tabClass = (isActive: boolean) =>
