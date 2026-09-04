@@ -6,8 +6,12 @@ export const criticalDomains: CriticalDomain[] = [
     short: "Financeiro",
     companies: "PagBank · Banco PAN",
     detail:
-      "Sistemas transacionais de adquirência e tokenização, com processamento de mais de 300 mil eventos diários, foco em segurança e performance.",
-    highlights: ["+300 mil eventos/dia", "Tokenização & segurança", "Kafka + RabbitMQ"],
+      "Sistemas transacionais de adquirência e tokenização no PagBank, e um ecossistema de investimentos no Banco PAN processando mais de 300 mil eventos diários — foco em segurança e performance.",
+    highlights: [
+      "Ecossistema c/ +300 mil eventos/dia",
+      "Tokenização & segurança",
+      "Kafka + RabbitMQ",
+    ],
   },
   {
     sector: "Varejo & ERP",

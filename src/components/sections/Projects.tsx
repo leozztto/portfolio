@@ -1,6 +1,7 @@
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { MethodTag } from "@/components/ui/MethodTag";
+import { Tag } from "@/components/ui/Tag";
 import { projects } from "@/content/projects";
 
 export function Projects() {
@@ -20,6 +21,8 @@ export function Projects() {
           <Reveal key={p.name} delay={i * 120} className="h-full">
             <a
               href={p.href}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group flex h-full flex-col rounded-lg border border-border bg-surface p-6 transition hover:-translate-y-1 hover:border-accent/50 hover:shadow-lg hover:shadow-black/30"
             >
               <div className="mb-2 flex items-center gap-2">
@@ -34,12 +37,9 @@ export function Projects() {
               </div>
               <div className="mt-4 flex flex-wrap gap-2">
                 {p.stack.map((s) => (
-                  <span
-                    key={s}
-                    className="rounded-full border border-border px-2 py-0.5 font-mono text-[10px] text-muted"
-                  >
+                  <Tag key={s} className="px-2 py-0.5 text-[10px]">
                     {s}
-                  </span>
+                  </Tag>
                 ))}
               </div>
             </a>

@@ -1,5 +1,7 @@
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { NumberedCard } from "@/components/ui/NumberedCard";
+import { Tag } from "@/components/ui/Tag";
 import { workingStyle } from "@/content/working-style";
 import { problemsSolved } from "@/content/problems";
 
@@ -17,27 +19,22 @@ export function WorkingStyle() {
       </Reveal>
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {workingStyle.map((item, i) => (
-          <Reveal
+          <NumberedCard
             key={item.title}
+            index={i}
             delay={i * 90}
-            className="group rounded-lg border border-border bg-surface p-6 transition hover:-translate-y-1 hover:border-accent/40"
+            numberClassName="mb-2 text-accent/70 group-hover:text-accent"
           >
-            <p className="mb-2 font-mono text-2xl font-bold text-accent/70 transition group-hover:text-accent">
-              {String(i + 1).padStart(2, "0")}
-            </p>
             <h3 className="font-display text-base font-bold">{item.title}</h3>
             <p className="mt-2 text-sm text-muted">{item.description}</p>
             <div className="mt-4 flex flex-wrap gap-2">
               {item.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-full border border-border px-2 py-0.5 font-mono text-[10px] text-muted"
-                >
+                <Tag key={tag} className="px-2 py-0.5 text-[10px]">
                   {tag}
-                </span>
+                </Tag>
               ))}
             </div>
-          </Reveal>
+          </NumberedCard>
         ))}
       </div>
 

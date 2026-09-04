@@ -1,5 +1,6 @@
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { Tag } from "@/components/ui/Tag";
 import { stack } from "@/content/stack";
 import { aboutStats, experienceAreas, education, studyingNow } from "@/content/about";
 
@@ -65,12 +66,9 @@ export function About() {
                 {stack
                   .flatMap((g) => g.items)
                   .map((item) => (
-                    <span
-                      key={item}
-                      className="rounded-full border border-border px-2.5 py-1 font-mono text-[11px] text-muted"
-                    >
+                    <Tag key={item} className="px-2.5 py-1 text-[11px]">
                       {item}
-                    </span>
+                    </Tag>
                   ))}
               </div>
             </div>

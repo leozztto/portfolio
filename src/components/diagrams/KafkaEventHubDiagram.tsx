@@ -40,7 +40,17 @@ export function KafkaEventHubDiagram() {
 
   return (
     <div className="flex justify-center overflow-x-auto py-2">
-      <svg viewBox="0 -60 930 457" className="h-auto w-full min-w-[760px] max-w-[1040px]">
+      <svg
+        viewBox="0 -60 930 457"
+        className="h-auto w-full min-w-[760px] max-w-[1040px]"
+        role="img"
+        aria-labelledby="kafka-event-hub-diagram-title"
+      >
+        <title id="kafka-event-hub-diagram-title">
+          Diagrama de arquitetura orientada a eventos: payment-api publica eventos de order/payment
+          no Kafka Broker (topic.financial.events), consumidos em paralelo por billing-service,
+          notification-service e analytics-worker.
+        </title>
         {/* produtor -> broker */}
         <path
           d={producerToBroker}
