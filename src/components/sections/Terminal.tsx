@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { siteConfig } from "@/config/site";
 
 type Status = {
   status: string;
@@ -37,7 +38,7 @@ export function Terminal() {
       </div>
       <div className="p-5 font-mono text-sm leading-relaxed">
         <p className="text-muted">
-          <span className="text-success">➜</span> ~ curl https://leandromf.dev/api/status
+          <span className="text-success">➜</span> ~ curl {siteConfig.url}/api/status
         </p>
         {!loaded && (
           <p className="mt-2 text-muted">

@@ -7,6 +7,6 @@ import type { StatusInfo } from "@/types/content";
 export const statusInfo: StatusInfo = {
   status: "online",
   stack: ["Java", "Kotlin", "Spring Boot", "Kafka", "Docker", "Kubernetes", "AWS"],
-  experience_time: "10 years",
+  experience_time: "10 anos",
   available_for: "novos projetos e oportunidades",
 };

@@ -16,18 +16,37 @@ export function ArchitectureExplorer() {
 
   return (
     <div className="rounded-lg border border-border bg-surface p-5">
-      <div className="flex flex-wrap gap-2">
-        <button onClick={() => setTab("distributed")} className={tabClass(tab === "distributed")}>
+      <div className="flex flex-wrap gap-2" role="tablist" aria-label="Padrões de arquitetura">
+        <button
+          role="tab"
+          id="tab-distributed"
+          aria-selected={tab === "distributed"}
+          aria-controls="panel-distributed"
+          onClick={() => setTab("distributed")}
+          className={tabClass(tab === "distributed")}
+        >
           <span className="h-1.5 w-1.5 rounded-full bg-[#6EC1FF]" />
           Sistema Distribuído
         </button>
-        <button onClick={() => setTab("kafka")} className={tabClass(tab === "kafka")}>
+        <button
+          role="tab"
+          id="tab-kafka"
+          aria-selected={tab === "kafka"}
+          aria-controls="panel-kafka"
+          onClick={() => setTab("kafka")}
+          className={tabClass(tab === "kafka")}
+        >
           <span className="h-1.5 w-1.5 rounded-full bg-[#A78BFA]" />
           Event Driven
         </button>
       </div>
 
-      <div className="mt-6 flex justify-center">
+      <div
+        className="mt-6 flex justify-center"
+        role="tabpanel"
+        id={tab === "distributed" ? "panel-distributed" : "panel-kafka"}
+        aria-labelledby={tab === "distributed" ? "tab-distributed" : "tab-kafka"}
+      >
         {tab === "distributed" ? <DistributedSystemDiagram /> : <KafkaEventHubDiagram />}
       </div>
     </div>

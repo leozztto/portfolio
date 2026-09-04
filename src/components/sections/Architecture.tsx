@@ -1,5 +1,6 @@
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { Tag } from "@/components/ui/Tag";
 import { ArchitectureExplorer } from "@/components/diagrams/ArchitectureExplorer";
 
 export function Architecture() {
@@ -32,12 +33,9 @@ export function Architecture() {
               "Escalabilidade",
               "Observabilidade",
             ].map((tag) => (
-              <span
-                key={tag}
-                className="rounded-full border border-border px-3 py-1 font-mono text-[11px] text-muted"
-              >
+              <Tag key={tag} className="px-3 py-1 text-[11px]">
                 {tag}
-              </span>
+              </Tag>
             ))}
           </div>
         </Reveal>

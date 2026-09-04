@@ -37,6 +37,7 @@ export function NeuralNetwork() {
     let nodes: Node[] = [];
     let pulses: { x: number; y: number; born: number }[] = [];
     let raf = 0;
+    let running = false;
 
     function initNodes() {
       const count = Math.max(70, Math.min(170, Math.floor((width * height) / 4200)));
@@ -64,6 +65,7 @@ export function NeuralNetwork() {
       canvas!.style.height = height + "px";
       ctx!.setTransform(dpr, 0, 0, dpr, 0, 0);
       initNodes();
+      if (!running) draw();
     }
 
     function draw() {
@@ -176,8 +178,30 @@ export function NeuralNetwork() {
           ctx!.fillText(n.label, n.x + 8, n.y - 8);
         }
       }
+    }
 
-      raf = requestAnimationFrame(draw);
+    function tick() {
+      draw();
+      raf = requestAnimationFrame(tick);
+    }
+
+    function startLoop() {
+      if (running || prefersReduced) return;
+      running = true;
+      raf = requestAnimationFrame(tick);
+    }
+
+    function stopLoop() {
+      running = false;
+      cancelAnimationFrame(raf);
+    }
+
+    function handleVisibilityChange() {
+      if (document.hidden) {
+        stopLoop();
+      } else {
+        startLoop();
+      }
     }
 
     function handleClick(e: MouseEvent) {
@@ -203,12 +227,19 @@ export function NeuralNetwork() {
     resize();
     window.addEventListener("resize", resize);
     canvas.addEventListener("click", handleClick);
-    raf = requestAnimationFrame(draw);
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    if (prefersReduced) {
+      draw();
+    } else {
+      startLoop();
+    }
 
     return () => {
       window.removeEventListener("resize", resize);
       canvas.removeEventListener("click", handleClick);
-      cancelAnimationFrame(raf);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+      stopLoop();
     };
   }, []);
 

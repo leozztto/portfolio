@@ -3,9 +3,6 @@ import type { ContactLink } from "@/types/content";
 
 export const contactLinks: ContactLink[] = [
   {
-    // TODO: troque pelo link real do seu currículo (Google Drive,
-    // GitHub, ou onde preferir hospedar) — abre em nova aba, sem
-    // manter o arquivo dentro do repositório do site.
     label: "↗ ver currículo (PDF)",
     href: siteConfig.resume,
     external: true,
@@ -15,9 +12,11 @@ export const contactLinks: ContactLink[] = [
   {
     label: siteConfig.social.linkedin.label,
     href: siteConfig.social.linkedin.href,
+    external: true,
   },
   {
     label: siteConfig.social.github.label,
     href: siteConfig.social.github.href,
+    external: true,
   },
 ];

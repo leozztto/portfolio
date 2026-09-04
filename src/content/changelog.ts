@@ -6,13 +6,19 @@ export const changelog: ChangelogEntry[] = [
     date: "jun 2026 — atual",
     role: "Engenheiro de Software Sênior",
     company: "LEZZOTTO Tech Ltda",
-    notes: ["[Adicione aqui os destaques desta posição atual.]"],
+    notes: [
+      "Atuação como Engenheiro de Software Sênior, com foco em arquitetura de sistemas distribuídos e decisões de system design de ponta a ponta.",
+      "Definição de padrões arquiteturais para microsserviços e mensageria, priorizando escalabilidade, resiliência e observabilidade.",
+      "Uso de ferramentas de codificação assistida por IA (agentes como Claude Code) no dia a dia de desenvolvimento, para gerar, revisar e refatorar código com mais velocidade e consistência.",
+      "Aplicação de IA na análise de trade-offs arquiteturais e na documentação de decisões técnicas, acelerando o processo de design de sistemas.",
+      "Construção de features e produtos que incorporam LLMs e agentes de IA, unindo a experiência em sistemas distribuídos com os estudos em Java e Agentes de IA.",
+    ],
   },
   {
     version: "v5.0.0",
     date: "set 2024 — abr 2026",
     role: "Engenheiro de Software SR",
-    company: "PAGBANK",
+    company: "PagBank",
     notes: [
       "No PagBank, atuei como engenheiro sênior na evolução de soluções de adquirência e tokenização",
       "Tomada de decisões arquiteturais e implementação de sistemas transacionais de alta criticidade.",
@@ -27,7 +33,7 @@ export const changelog: ChangelogEntry[] = [
     version: "v4.0.0",
     date: "fev 2023 — set 2024",
     role: "Engenheiro de Software",
-    company: "BANCO PAN",
+    company: "Banco PAN",
     notes: [
       "No Banco PAN, participei da construção de um ecossistema(microsservices) distribuído para investimentos, processando mais de 300 mil eventos diários.",
       "Arquitetura orientada a eventos com Apache Kafka e SQS.",
@@ -59,9 +65,9 @@ export const changelog: ChangelogEntry[] = [
   },
   {
     version: "v1.0.0",
-    date: "2017 — 2020",
+    date: "2016 — 2020",
     role: "Desenvolvedor de Software / Especialista em Conversão de Dados",
-    company: "VIASOFT, LIMBER e LZ CONSULTORIA",
+    company: "Viasoft, Limber Software e LZ Consultoria",
     notes: [
       "Desenvolvimento desktop com Delphi e relatórios/consultas personalizadas.",
       "Migração e conversão de dados entre PostgreSQL, Firebird, MySQL e Oracle.",

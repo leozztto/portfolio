@@ -5,7 +5,7 @@ import { changelog } from "@/content/changelog";
 
 export function Experience() {
   return (
-    <section id="experiencia" className="mx-auto max-w-7xl px-6 py-8">
+    <section id="changelog" className="mx-auto max-w-7xl px-6 py-8">
       <Reveal>
         <SectionHeader method="GET" route="/changelog" title="Experiência" />
       </Reveal>
