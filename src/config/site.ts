@@ -20,7 +20,7 @@ export const siteConfig = {
     },
   },
   /** PDF servido de `public/`. */
-  resume: "/curriculo-leandro-franceschetto.pdf",
+  resume: "/Curriculo_Leandro_Franceschetto.pdf",
 } as const;
 
 export type SiteConfig = typeof siteConfig;
