@@ -18,7 +18,7 @@ export function WorkingStyle() {
         </p>
       </Reveal>
 
-      <div className="grid items-stretch gap-8 lg:grid-cols-[480px_1fr]">
+      <div className="grid items-stretch gap-8 lg:grid-cols-[560px_1fr]">
         {/* Mapa de domínios (radar) */}
         <Reveal
           delay={120}

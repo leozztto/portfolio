@@ -5,7 +5,7 @@ type Skill = { label: string[]; value: number };
 const MAX = 5;
 const CX = 240;
 const CY = 240;
-const MAX_R = 165;
+const MAX_R = 148;
 
 function point(radius: number, index: number, total: number) {
   const angle = (Math.PI * 2 * index) / total - Math.PI / 2;
@@ -65,7 +65,7 @@ export function SkillRadar({ skills }: { skills: Skill[] }) {
 
       {/* rótulos — suportam 1 ou 2 linhas, sem cortar */}
       {skills.map((s, i) => {
-        const [x, y] = point(MAX_R + 20, i, total);
+        const [x, y] = point(MAX_R + 17, i, total);
         const anchor = anchorFor(x);
         const startDy = s.label.length === 2 ? -6 : 4;
         return (
@@ -75,7 +75,7 @@ export function SkillRadar({ skills }: { skills: Skill[] }) {
             y={y}
             textAnchor={anchor}
             fontFamily="monospace"
-            fontSize="13.5"
+            fontSize="12.5"
             fill={palette.text}
             fontWeight="400"
           >

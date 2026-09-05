@@ -3,7 +3,7 @@ import type { CoreSkill, RadarSkill } from "@/types/content";
 export const radarSkills: RadarSkill[] = [
   { label: ["Backend Java"], value: 5 },
   { label: ["Mensageria", "& Eventos"], value: 5 },
-  { label: ["Cloud & DevOps"], value: 4.5 },
+  { label: ["Cloud &", "DevOps"], value: 4.5 },
   { label: ["Dados", "(SQL/NoSQL)"], value: 4.5 },
   { label: ["Arquitetura", "& Design"], value: 4.5 },
   { label: ["Sistemas", "Distribuídos"], value: 5 },
@@ -34,5 +34,10 @@ export const techPillars: CoreSkill[] = [
     title: "Arquitetura & Resiliência",
     badge: "System Design",
     items: "Microsserviços · Event-Driven · Alta disponibilidade · Observabilidade",
+  },
+  {
+    title: "IA & Agentes",
+    badge: "Applied AI",
+    items: "Codificação assistida por IA · LLMs e agentes · Java aplicado a agentes (em formação)",
   },
 ];
