@@ -1,6 +1,7 @@
 import type { NavItem } from "@/types/content";
 
 export const nav: NavItem[] = [
+  { method: "GET", route: "/", href: "#topo" },
   { method: "GET", route: "/sobre", href: "#sobre" },
   { method: "GET", route: "/atuacao", href: "#atuacao" },
   { method: "GET", route: "/competencias", href: "#competencias" },

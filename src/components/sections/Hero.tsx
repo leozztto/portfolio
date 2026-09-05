@@ -3,7 +3,7 @@ import { NeuralNetwork } from "@/components/diagrams/NeuralNetwork";
 
 export function Hero() {
   return (
-    <section className="relative isolate min-h-[640px] overflow-hidden sm:min-h-[760px]">
+    <section id="topo" className="relative isolate min-h-[640px] overflow-hidden sm:min-h-[760px]">
       <NeuralNetwork />
       <div className="relative z-0 mx-auto flex max-w-7xl flex-col items-start gap-8 px-6 py-20">
         <div>
