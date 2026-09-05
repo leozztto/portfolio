@@ -187,7 +187,7 @@ export function DistributedSystemDiagram() {
   return (
     <div className="flex justify-center overflow-x-auto py-2">
       <svg
-        viewBox="0 0 1120 550"
+        viewBox="0 -20 1120 560"
         className="h-auto w-full min-w-[760px] max-w-[1040px]"
         role="img"
         aria-labelledby="distributed-system-diagram-title"

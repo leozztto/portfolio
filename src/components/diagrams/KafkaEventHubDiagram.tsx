@@ -41,7 +41,7 @@ export function KafkaEventHubDiagram() {
   return (
     <div className="flex justify-center overflow-x-auto py-2">
       <svg
-        viewBox="0 -60 930 457"
+        viewBox="0 -64 930 465"
         className="h-auto w-full min-w-[760px] max-w-[1040px]"
         role="img"
         aria-labelledby="kafka-event-hub-diagram-title"

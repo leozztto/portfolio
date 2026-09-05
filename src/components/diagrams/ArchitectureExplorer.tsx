@@ -1,11 +1,40 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ComponentType } from "react";
+import { palette, diagram } from "@/lib/theme";
 import { DistributedSystemDiagram } from "./DistributedSystemDiagram";
 import { KafkaEventHubDiagram } from "./KafkaEventHubDiagram";
+import { HexagonalArchitectureDiagram } from "./HexagonalArchitectureDiagram";
+import { OutboxPatternDiagram } from "./OutboxPatternDiagram";
+
+type TabId = "distributed" | "kafka" | "hexagonal" | "outbox";
+
+const tabs: {
+  id: TabId;
+  label: string;
+  dot: string;
+  Diagram: ComponentType;
+}[] = [
+  {
+    id: "distributed",
+    label: "Sistema Distribuído",
+    dot: diagram.blue,
+    Diagram: DistributedSystemDiagram,
+  },
+  { id: "kafka", label: "Event Driven", dot: diagram.purple, Diagram: KafkaEventHubDiagram },
+  {
+    id: "hexagonal",
+    label: "Hexagonal",
+    dot: palette.success,
+    Diagram: HexagonalArchitectureDiagram,
+  },
+  { id: "outbox", label: "Outbox", dot: palette.accent, Diagram: OutboxPatternDiagram },
+];
 
 export function ArchitectureExplorer() {
-  const [tab, setTab] = useState<"distributed" | "kafka">("distributed");
+  const [tab, setTab] = useState<TabId>("distributed");
+  const active = tabs.find((t) => t.id === tab) ?? tabs[0];
+  const ActiveDiagram = active.Diagram;
 
   const tabClass = (isActive: boolean) =>
     `flex items-center gap-2 rounded-full border px-3.5 py-1.5 font-mono text-xs transition ${
@@ -17,37 +46,29 @@ export function ArchitectureExplorer() {
   return (
     <div className="rounded-lg border border-border bg-surface p-5">
       <div className="flex flex-wrap gap-2" role="tablist" aria-label="Padrões de arquitetura">
-        <button
-          role="tab"
-          id="tab-distributed"
-          aria-selected={tab === "distributed"}
-          aria-controls="panel-distributed"
-          onClick={() => setTab("distributed")}
-          className={tabClass(tab === "distributed")}
-        >
-          <span className="h-1.5 w-1.5 rounded-full bg-[#6EC1FF]" />
-          Sistema Distribuído
-        </button>
-        <button
-          role="tab"
-          id="tab-kafka"
-          aria-selected={tab === "kafka"}
-          aria-controls="panel-kafka"
-          onClick={() => setTab("kafka")}
-          className={tabClass(tab === "kafka")}
-        >
-          <span className="h-1.5 w-1.5 rounded-full bg-[#A78BFA]" />
-          Event Driven
-        </button>
+        {tabs.map((t) => (
+          <button
+            key={t.id}
+            role="tab"
+            id={`tab-${t.id}`}
+            aria-selected={tab === t.id}
+            aria-controls={`panel-${t.id}`}
+            onClick={() => setTab(t.id)}
+            className={tabClass(tab === t.id)}
+          >
+            <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: t.dot }} />
+            {t.label}
+          </button>
+        ))}
       </div>
 
       <div
         className="mt-6 flex justify-center"
         role="tabpanel"
-        id={tab === "distributed" ? "panel-distributed" : "panel-kafka"}
-        aria-labelledby={tab === "distributed" ? "tab-distributed" : "tab-kafka"}
+        id={`panel-${tab}`}
+        aria-labelledby={`tab-${tab}`}
       >
-        {tab === "distributed" ? <DistributedSystemDiagram /> : <KafkaEventHubDiagram />}
+        <ActiveDiagram />
       </div>
     </div>
   );
