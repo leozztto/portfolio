@@ -4,29 +4,21 @@ export const problemsSolved: ProblemSolved[] = [
   {
     title: "Modernização de sistemas legados",
     description:
-      "Evolução incremental de aplicações antigas para arquiteturas de microsserviços, sem quebrar fluxos existentes.",
+      "Evolução incremental de monólitos e aplicações antigas para arquiteturas de microsserviços, extraindo domínios um de cada vez, sem interromper fluxos em produção nem exigir reescritas completas.",
   },
   {
-    title: "Integrações resilientes",
+    title: "Arquitetura orientada a eventos e integrações resilientes",
     description:
-      "APIs, autenticação e mensageria com tratamento de falhas entre serviços distribuídos.",
+      "Kafka e RabbitMQ para desacoplar serviços e processar alto volume de eventos, com retry, dead-letter queue e idempotência garantindo entrega mesmo diante de falhas de rede ou indisponibilidade entre serviços distribuídos.",
   },
   {
-    title: "Arquitetura orientada a eventos",
-    description: "Kafka e RabbitMQ para desacoplar sistemas e processar alto volume de eventos.",
-  },
-  {
-    title: "Consistência de dados",
+    title: "Consistência de dados em sistemas transacionais",
     description:
-      "Bancos relacionais e não relacionais, garantindo integridade em sistemas transacionais críticos.",
+      "Bancos relacionais e não relacionais modelados para preservar integridade em operações críticas, aplicando padrões como transactional outbox para evitar duplicidade e perda de eventos.",
   },
   {
-    title: "Escalabilidade e alta disponibilidade",
-    description: "Deploy em Kubernetes sobre AWS e GCP com foco em resiliência operacional.",
-  },
-  {
-    title: "CI/CD e qualidade técnica",
+    title: "Escalabilidade, alta disponibilidade e entrega contínua",
     description:
-      "Pipelines de integração e entrega contínuas, testes automatizados e padronização de código.",
+      "Deploy em Kubernetes sobre AWS e GCP com foco em resiliência operacional, sustentado por pipelines de CI/CD, testes automatizados e padronização de código para acelerar entregas sem abrir mão de qualidade.",
   },
 ];

@@ -12,9 +12,10 @@ export function Domains() {
       </Reveal>
       <Reveal delay={80}>
         <p className="mb-10 text-base text-muted">
-          Confiabilidade onde a tolerância a falhas é mínima — experiência em setores onde
-          disponibilidade e integridade de dados são requisitos de negócio, não apenas requisitos
-          técnicos.
+          Confiabilidade onde a tolerância a falhas é mínima — experiência em pagamentos, varejo e
+          migração de dados, setores onde disponibilidade, consistência transacional e integridade
+          dos dados são requisitos de negócio, não apenas requisitos técnicos: um evento perdido ou
+          um saldo divergente tem custo financeiro e regulatório direto.
         </p>
       </Reveal>
       <div className="grid gap-6 sm:grid-cols-3">

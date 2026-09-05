@@ -11,8 +11,9 @@ export function CoreEngineering() {
       </Reveal>
       <Reveal delay={80}>
         <p className="mb-10 text-base text-muted">
-          Competências aplicadas em produção — consolidadas em arquiteturas escaláveis, ecossistema
-          Java e sistemas críticos.
+          Competências aplicadas em produção — consolidadas no ecossistema Java/Spring, mensageria
+          orientada a eventos, cloud AWS/GCP, bancos relacionais e não relacionais e containers,
+          sustentando arquiteturas escaláveis e sistemas críticos que não podem falhar.
         </p>
       </Reveal>
 

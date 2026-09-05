@@ -14,7 +14,9 @@ export function WorkingStyle() {
       <Reveal delay={80}>
         <p className="mb-10 text-base text-muted">
           Minha atuação combina desenvolvimento hands-on e arquitetura, transformando problemas de
-          negócio em sistemas confiáveis, escaláveis e fáceis de evoluir.
+          negócio em sistemas confiáveis, escaláveis e fáceis de evoluir — do backend em Java/Kotlin
+          e mensageria orientada a eventos até infraestrutura em nuvem, modelagem de dados e as
+          práticas de CI/CD que sustentam tudo isso em produção.
         </p>
       </Reveal>
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
