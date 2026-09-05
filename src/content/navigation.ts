@@ -4,7 +4,6 @@ export const nav: NavItem[] = [
   { method: "GET", route: "/", href: "#topo" },
   { method: "GET", route: "/sobre", href: "#sobre" },
   { method: "GET", route: "/atuacao", href: "#atuacao" },
-  { method: "GET", route: "/competencias", href: "#competencias" },
   { method: "GET", route: "/projetos", href: "#projetos" },
   { method: "GET", route: "/dominios", href: "#dominios" },
   { method: "GET", route: "/arquitetura", href: "#arquitetura" },

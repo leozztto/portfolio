@@ -2,23 +2,23 @@ import type { ProblemSolved } from "@/types/content";
 
 export const problemsSolved: ProblemSolved[] = [
   {
-    title: "Modernização de sistemas legados",
+    title: "Modernização sem parar o negócio",
     description:
-      "Evolução incremental de monólitos e aplicações antigas para arquiteturas de microsserviços, extraindo domínios um de cada vez, sem interromper fluxos em produção nem exigir reescritas completas.",
+      "Evolução incremental de legado para microsserviços, extraindo domínios um de cada vez e mantendo os fluxos existentes no ar — sem 'big bang' e sem congelar o roadmap do produto.",
   },
   {
-    title: "Arquitetura orientada a eventos e integrações resilientes",
+    title: "Zero perda de evento em cenário de falha",
     description:
-      "Kafka e RabbitMQ para desacoplar serviços e processar alto volume de eventos, com retry, dead-letter queue e idempotência garantindo entrega mesmo diante de falhas de rede ou indisponibilidade entre serviços distribuídos.",
+      "Integrações desenhadas para continuar entregando dado mesmo quando um serviço cai ou a rede falha, evitando reconciliação manual e retrabalho depois do incidente.",
   },
   {
-    title: "Consistência de dados em sistemas transacionais",
+    title: "Dado consistente sob concorrência",
     description:
-      "Bancos relacionais e não relacionais modelados para preservar integridade em operações críticas, aplicando padrões como transactional outbox para evitar duplicidade e perda de eventos.",
+      "Operações transacionais que não duplicam nem perdem informação mesmo com múltiplos serviços escrevendo ao mesmo tempo — essencial quando o dado representa dinheiro.",
   },
   {
-    title: "Escalabilidade, alta disponibilidade e entrega contínua",
+    title: "Escalar sem inflar o time de operação",
     description:
-      "Deploy em Kubernetes sobre AWS e GCP com foco em resiliência operacional, sustentado por pipelines de CI/CD, testes automatizados e padronização de código para acelerar entregas sem abrir mão de qualidade.",
+      "Deploy e entrega automatizados para suportar pico de tráfego e novas features sem exigir mais gente cuidando de infraestrutura manualmente.",
   },
 ];

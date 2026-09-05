@@ -12,14 +12,13 @@ export function NumberedCard({
   children: React.ReactNode;
 }) {
   return (
-    <Reveal
-      delay={delay}
-      className="group rounded-lg border border-border bg-surface p-6 transition hover:-translate-y-1 hover:border-accent/40"
-    >
-      <p className={`font-mono text-2xl font-bold transition ${numberClassName}`}>
-        {String(index + 1).padStart(2, "0")}
-      </p>
-      {children}
+    <Reveal delay={delay} className="h-full">
+      <div className="group flex h-full flex-col rounded-lg border border-border bg-surface p-6 transition hover:-translate-y-1 hover:border-accent/50 hover:shadow-lg hover:shadow-black/30">
+        <p className={`font-mono text-2xl font-bold transition ${numberClassName}`}>
+          {String(index + 1).padStart(2, "0")}
+        </p>
+        {children}
+      </div>
     </Reveal>
   );
 }
