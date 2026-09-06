@@ -29,7 +29,7 @@ export function Terminal() {
   }, []);
 
   return (
-    <div className="w-full max-w-2xl rounded-lg border border-border bg-surface shadow-2xl shadow-black/40">
+    <div className="w-full max-w-2xl rounded-xl border border-accent/30 bg-gradient-to-br from-accent/10 via-surface to-surface shadow-lg shadow-black/20">
       <div className="flex items-center gap-2 border-b border-border px-4 py-3">
         <span className="h-3 w-3 rounded-full bg-error/70" />
         <span className="h-3 w-3 rounded-full bg-accent/70" />
@@ -37,9 +37,6 @@ export function Terminal() {
         <span className="ml-3 font-mono text-xs text-muted">zsh — GET /api/status</span>
       </div>
       <div className="p-5 font-mono text-sm leading-relaxed">
-        <p className="text-muted">
-          <span className="text-success">➜</span> ~ curl {siteConfig.url}/api/status
-        </p>
         {!loaded && (
           <p className="mt-2 text-muted">
             aguardando resposta<span className="blink">_</span>
@@ -54,7 +51,9 @@ export function Terminal() {
   "name": "${data.name}",
   "role": "${data.role}",
   "location": "${data.location}",
-  "stack": [${data.stack.map((s) => `"${s}"`).join(", ")}],
+  "stack": [
+    ${data.stack.map((s) => `"${s}"`).join(",\n    ")}
+  ],
   "experience_time": "${data.experience_time}",
   "available_for": "${data.available_for}"
 }`}

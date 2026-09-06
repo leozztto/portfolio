@@ -22,11 +22,11 @@ export const palette = {
   surface: "#12161F",
   surfaceAlt: "#171C27",
   border: "#232935",
-  text: "#E4E7EC",
-  muted: "#7C8494",
-  accent: "#E8A33D",
-  success: "#3ECF8E",
-  error: "#E8615A",
+  text: "#EEF1F7",
+  muted: "#98A5CB",
+  accent: "#F5A82E",
+  success: "#36E0A0",
+  error: "#F0665D",
 } as const;
 
 export const diagram = {

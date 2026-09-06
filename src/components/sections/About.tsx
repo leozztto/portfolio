@@ -21,7 +21,7 @@ export function About() {
         {/* Bio */}
         <div>
           <Reveal delay={200}>
-            <p className="max-w-2xl text-muted">
+            <p className="max-w-2xl text-justify text-muted">
               Atuo com back-end há oito anos, boa parte desse tempo em sistemas críticos, que exigem
               alta resiliência: pagamentos, mensageria financeira e plataformas de alto volume
               transacional. Tenho grande preocupação em decisões de arquitetura que visam garantir a
@@ -29,7 +29,7 @@ export function About() {
             </p>
           </Reveal>
           <Reveal delay={250}>
-            <p className="mt-4 max-w-2xl text-muted">
+            <p className="mt-4 max-w-2xl text-justify text-muted">
               No dia a dia isso se traduz em tecnologias como Java e Kotlin com Spring Boot, Kafka
               para mensageria e aplicações Event-Driven e deploys em Kubernetes sobre plataformas
               como AWS e GCP. Escalabilidade e consistência de dados guiam praticamente toda decisão
@@ -37,7 +37,7 @@ export function About() {
             </p>
           </Reveal>
           <Reveal delay={300}>
-            <p className="mt-4 max-w-2xl text-muted">
+            <p className="mt-4 max-w-2xl text-justify text-muted">
               Agora estou expandindo esse repertório para Inteligência Artificial, numa
               pós-graduação focada em Java aplicado a agentes de IA — a ideia é levar essa camada
               para os mesmos sistemas críticos onde já atuo e acelerar o desenvolvimento melhorando
@@ -77,7 +77,7 @@ export function About() {
 
         {/* Metadados: experiência, formação, estudos */}
         <div className="space-y-6">
-          <Reveal delay={200} className="rounded-lg border border-border bg-surface p-5">
+          <Reveal delay={200} className="rounded-xl border border-accent/30 bg-gradient-to-br from-accent/10 via-surface to-surface p-6 shadow-lg shadow-black/20">
             <p className="mb-3 font-mono text-xs uppercase tracking-widest text-muted">
               Experiência com
             </p>
@@ -90,7 +90,7 @@ export function About() {
             </ul>
           </Reveal>
 
-          <Reveal delay={280} className="rounded-lg border border-border bg-surface p-5">
+          <Reveal delay={280} className="rounded-xl border border-accent/30 bg-gradient-to-br from-accent/10 via-surface to-surface p-6 shadow-lg shadow-black/20">
             <p className="mb-3 font-mono text-xs uppercase tracking-widest text-muted">
               🎓 Formação
             </p>
@@ -103,7 +103,7 @@ export function About() {
             </ul>
           </Reveal>
 
-          <Reveal delay={360} className="rounded-lg border border-border bg-surface p-5">
+          <Reveal delay={360} className="rounded-xl border border-accent/30 bg-gradient-to-br from-accent/10 via-surface to-surface p-6 shadow-lg shadow-black/20">
             <p className="mb-3 font-mono text-xs uppercase tracking-widest text-muted">
               📚 Atualmente estudando
             </p>

@@ -52,7 +52,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="pt-BR"
       className={`${fontDisplay.variable} ${fontBody.variable} ${fontMono.variable}`}
     >
-      <body className="bg-bg font-body text-text antialiased">{children}</body>
+      <body className="bg-bg font-body text-text antialiased">
+        <div aria-hidden className="bg-grid pointer-events-none fixed inset-0 -z-10" />
+        {children}
+      </body>
     </html>
   );
 }

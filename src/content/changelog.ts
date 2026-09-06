@@ -35,7 +35,7 @@ export const changelog: ChangelogEntry[] = [
     role: "Engenheiro de Software",
     company: "Banco PAN",
     notes: [
-      "No Banco PAN, participei da construção de um ecossistema(microsservices) distribuído para investimentos, processando mais de 300 mil eventos diários.",
+      "No Banco PAN, participei da construção de um ecossistema de microsserviços distribuído para investimentos, desenhado para sustentar alto volume diário de eventos com baixo acoplamento.",
       "Arquitetura orientada a eventos com Apache Kafka e SQS.",
       "Deploy de microsserviços em Kubernetes sobre AWS.",
       "Participação em decisões de arquitetura e definição de padrões técnicos, reduzindo o acoplamento entre serviços.",
@@ -70,7 +70,7 @@ export const changelog: ChangelogEntry[] = [
     company: "Viasoft, Limber Software e LZ Consultoria",
     notes: [
       "Desenvolvimento desktop com Delphi e relatórios/consultas personalizadas.",
-      "Migração e conversão de dados entre PostgreSQL, Firebird, MySQL e Oracle.",
+      "Condução de projetos de conversão de dados legados para múltiplos clientes, cada um com banco e formato de origem diferente.",
       "Implantação de sistemas e suporte técnico a clientes.",
     ],
   },

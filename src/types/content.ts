@@ -27,12 +27,6 @@ export interface CoreSkill {
   items: string;
 }
 
-export interface WorkingStyleItem {
-  title: string;
-  description: string;
-  tags: string[];
-}
-
 export interface ProblemSolved {
   title: string;
   description: string;

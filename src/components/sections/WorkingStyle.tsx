@@ -1,8 +1,7 @@
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { NumberedCard } from "@/components/ui/NumberedCard";
-import { Tag } from "@/components/ui/Tag";
-import { workingStyle } from "@/content/working-style";
+import { SkillRadar } from "@/components/diagrams/SkillRadar";
+import { radarSkills, techPillars } from "@/content/skills";
 import { problemsSolved } from "@/content/problems";
 
 export function WorkingStyle() {
@@ -12,30 +11,50 @@ export function WorkingStyle() {
         <SectionHeader method="GET" route="/atuacao" title="Como Atuo" />
       </Reveal>
       <Reveal delay={80}>
-        <p className="mb-10 text-base text-muted">
-          Minha atuação combina desenvolvimento hands-on e arquitetura, transformando problemas de
-          negócio em sistemas confiáveis, escaláveis e fáceis de evoluir.
+        <p className="mb-10 text-base text-justify text-muted">
+          Combino desenvolvimento hands-on e arquitetura, transformando problemas de negócio em
+          sistemas confiáveis, escaláveis e fáceis de evoluir. O mapa e os pilares abaixo resumem
+          onde essa experiência é mais forte.
         </p>
       </Reveal>
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {workingStyle.map((item, i) => (
-          <NumberedCard
-            key={item.title}
-            index={i}
-            delay={i * 90}
-            numberClassName="mb-2 text-accent/70 group-hover:text-accent"
-          >
-            <h3 className="font-display text-base font-bold">{item.title}</h3>
-            <p className="mt-2 text-sm text-muted">{item.description}</p>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {item.tags.map((tag) => (
-                <Tag key={tag} className="px-2 py-0.5 text-[10px]">
-                  {tag}
-                </Tag>
-              ))}
-            </div>
-          </NumberedCard>
-        ))}
+
+      <div className="grid items-stretch gap-8 lg:grid-cols-[560px_1fr]">
+        {/* Mapa de domínios (radar) */}
+        <Reveal
+          delay={120}
+          className="flex flex-col rounded-xl border border-accent/30 bg-gradient-to-br from-accent/10 via-surface to-surface p-7 shadow-lg shadow-black/20"
+        >
+          <div className="mb-4 flex items-center justify-between border-b border-border pb-4">
+            <p className="font-mono text-xs uppercase tracking-widest text-muted">
+              Mapa de domínios
+            </p>
+            <p className="font-mono text-[10px] text-muted/60">Visão arquitetural</p>
+          </div>
+          <div className="mx-auto flex w-full max-w-[420px] flex-1 items-center">
+            <SkillRadar skills={radarSkills} />
+          </div>
+        </Reveal>
+
+        {/* Pilares técnicos — um único card, com o mesmo padding do
+            painel ao lado, para que os dois comecem exatamente na mesma linha */}
+        <Reveal
+          delay={150}
+          className="flex flex-col rounded-xl border border-accent/30 bg-gradient-to-br from-accent/10 via-surface to-surface p-7 shadow-lg shadow-black/20"
+        >
+          <div className="flex flex-1 flex-col justify-between divide-y divide-border">
+            {techPillars.map((item) => (
+              <div key={item.title} className="py-3 first:pt-0 last:pb-0">
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <h3 className="font-display text-sm font-medium text-text">{item.title}</h3>
+                  <span className="rounded-full border border-accent/40 bg-accent/10 px-2.5 py-0.5 font-mono text-[9px] text-accent">
+                    {item.badge}
+                  </span>
+                </div>
+                <p className="mt-1.5 text-sm text-justify text-muted">{item.items}</p>
+              </div>
+            ))}
+          </div>
+        </Reveal>
       </div>
 
       {/* Problemas que resolvo */}
@@ -54,7 +73,7 @@ export function WorkingStyle() {
               </span>
               <div>
                 <h4 className="font-display text-base font-bold">{item.title}</h4>
-                <p className="mt-1 text-sm text-muted">{item.description}</p>
+                <p className="mt-1 text-sm text-justify text-muted">{item.description}</p>
               </div>
             </Reveal>
           ))}

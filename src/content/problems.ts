@@ -2,31 +2,23 @@ import type { ProblemSolved } from "@/types/content";
 
 export const problemsSolved: ProblemSolved[] = [
   {
-    title: "Modernização de sistemas legados",
+    title: "Modernização sem parar o negócio",
     description:
-      "Evolução incremental de aplicações antigas para arquiteturas de microsserviços, sem quebrar fluxos existentes.",
+      "Evolução incremental de legado para microsserviços, extraindo domínios um de cada vez e mantendo os fluxos existentes no ar — sem 'big bang' e sem congelar o roadmap do produto.",
   },
   {
-    title: "Integrações resilientes",
+    title: "Zero perda de evento em cenário de falha",
     description:
-      "APIs, autenticação e mensageria com tratamento de falhas entre serviços distribuídos.",
+      "Integrações desenhadas para continuar entregando dado mesmo quando um serviço cai ou a rede falha, evitando reconciliação manual e retrabalho depois do incidente.",
   },
   {
-    title: "Arquitetura orientada a eventos",
-    description: "Kafka e RabbitMQ para desacoplar sistemas e processar alto volume de eventos.",
-  },
-  {
-    title: "Consistência de dados",
+    title: "Dado consistente sob concorrência",
     description:
-      "Bancos relacionais e não relacionais, garantindo integridade em sistemas transacionais críticos.",
+      "Operações transacionais que não duplicam nem perdem informação mesmo com múltiplos serviços escrevendo ao mesmo tempo — essencial quando o dado representa dinheiro.",
   },
   {
-    title: "Escalabilidade e alta disponibilidade",
-    description: "Deploy em Kubernetes sobre AWS e GCP com foco em resiliência operacional.",
-  },
-  {
-    title: "CI/CD e qualidade técnica",
+    title: "Escalar sem inflar o time de operação",
     description:
-      "Pipelines de integração e entrega contínuas, testes automatizados e padronização de código.",
+      "Deploy e entrega automatizados para suportar pico de tráfego e novas features sem exigir mais gente cuidando de infraestrutura manualmente.",
   },
 ];

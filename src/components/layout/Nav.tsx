@@ -27,7 +27,15 @@ export function Nav({ items }: { items: NavItem[] }) {
       const nearBottom = window.innerHeight + window.scrollY >= document.body.scrollHeight - 4;
       if (nearBottom) current = sections[sections.length - 1];
 
-      if (current) setActive(`#${current.id}`);
+      if (current) {
+        const href = `#${current.id}`;
+        setActive(href);
+        // mantém a URL em sincronia com o menu durante o scroll, sem
+        // pular a página nem criar entradas no histórico
+        if (window.location.hash !== href) {
+          window.history.replaceState(null, "", href);
+        }
+      }
       tickingRef.current = false;
     }
 

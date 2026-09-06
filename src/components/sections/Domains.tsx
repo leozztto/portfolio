@@ -11,10 +11,11 @@ export function Domains() {
         <SectionHeader method="GET" route="/dominios" title="Domínios de Experiência" />
       </Reveal>
       <Reveal delay={80}>
-        <p className="mb-10 text-base text-muted">
-          Confiabilidade onde a tolerância a falhas é mínima — experiência em setores onde
-          disponibilidade e integridade de dados são requisitos de negócio, não apenas requisitos
-          técnicos.
+        <p className="mb-10 text-base text-justify text-muted">
+          Confiabilidade onde a tolerância a falhas é mínima — experiência em pagamentos, varejo e
+          migração de dados, setores onde disponibilidade, consistência transacional e integridade
+          dos dados são requisitos de negócio, não apenas requisitos técnicos: um evento perdido ou
+          um saldo divergente tem custo financeiro e regulatório direto.
         </p>
       </Reveal>
       <div className="grid gap-6 sm:grid-cols-3">
@@ -25,7 +26,7 @@ export function Domains() {
             </p>
             <h3 className="mt-1 font-display text-base font-bold">{domain.sector}</h3>
             <p className="mt-1 font-mono text-[11px] text-muted">{domain.companies}</p>
-            <p className="mt-3 text-sm text-muted">{domain.detail}</p>
+            <p className="mt-3 text-sm text-justify text-muted">{domain.detail}</p>
             <div className="mt-4 flex flex-wrap gap-2">
               {domain.highlights.map((h) => (
                 <Tag key={h} className="px-2.5 py-1 text-[10px]">

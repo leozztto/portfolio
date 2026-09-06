@@ -5,7 +5,7 @@ type Skill = { label: string[]; value: number };
 const MAX = 5;
 const CX = 240;
 const CY = 240;
-const MAX_R = 145;
+const MAX_R = 148;
 
 function point(radius: number, index: number, total: number) {
   const angle = (Math.PI * 2 * index) / total - Math.PI / 2;
@@ -60,12 +60,12 @@ export function SkillRadar({ skills }: { skills: Skill[] }) {
       <polygon points={dataPoints} fill="url(#radarFill)" stroke={diagram.blue} strokeWidth="2" />
       {skills.map((s, i) => {
         const [x, y] = point((s.value / MAX) * MAX_R, i, total);
-        return <circle key={i} cx={x} cy={y} r="3.5" fill={diagram.blue} />;
+        return <circle key={i} cx={x} cy={y} r="4" fill={diagram.blue} />;
       })}
 
       {/* rótulos — suportam 1 ou 2 linhas, sem cortar */}
       {skills.map((s, i) => {
-        const [x, y] = point(MAX_R + 22, i, total);
+        const [x, y] = point(MAX_R + 17, i, total);
         const anchor = anchorFor(x);
         const startDy = s.label.length === 2 ? -6 : 4;
         return (
@@ -75,12 +75,12 @@ export function SkillRadar({ skills }: { skills: Skill[] }) {
             y={y}
             textAnchor={anchor}
             fontFamily="monospace"
-            fontSize="12"
+            fontSize="12.5"
             fill={palette.text}
             fontWeight="400"
           >
             {s.label.map((line, li) => (
-              <tspan key={li} x={x} dy={li === 0 ? startDy : 14}>
+              <tspan key={li} x={x} dy={li === 0 ? startDy : 15}>
                 {line}
               </tspan>
             ))}

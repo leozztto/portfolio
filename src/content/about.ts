@@ -6,13 +6,11 @@ export const aboutStats: AboutStat[] = [
 ];
 
 export const experienceAreas: string[] = [
-  "Microsserviços",
   "Design de APIs",
+  "Microsserviços",
   "Mensageria",
   "CI/CD",
   "Bancos relacionais e não relacionais",
-  "Arquitetura orientada a eventos",
-  "Arquitetura de microsserviços",
 ];
 
 export const education: string[] = [

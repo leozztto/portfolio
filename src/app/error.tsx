@@ -14,7 +14,7 @@ export default function Error({
   }, [error]);
 
   return (
-    <main className="bg-grid flex min-h-screen flex-col items-center justify-center gap-4 px-6 text-center">
+    <main className="flex min-h-screen flex-col items-center justify-center gap-4 px-6 text-center">
       <p className="font-mono text-sm uppercase tracking-widest text-error">500 Internal Error</p>
       <h1 className="font-display text-3xl font-bold">Algo quebrou</h1>
       <p className="max-w-md text-sm text-muted">

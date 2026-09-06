@@ -19,19 +19,20 @@ export function Architecture() {
             Simples de explicar,
             <br /> pronto pra <span className="text-accent">produção</span>
           </h3>
-          <p className="mt-4 text-sm text-muted">
-            Os diagramas ao lado resumem dois padrões que uso bastante no dia a dia: um fluxo de
-            serviços por trás de um gateway, e um fluxo orientado a eventos passando por um broker.
-            Alterne entre as abas para ver cada um.
+          <p className="mt-4 text-sm text-justify text-muted">
+            Os diagramas ao lado resumem quatro padrões que uso bastante no dia a dia: serviços por
+            trás de um gateway com cache distribuído, um fluxo orientado a eventos passando por um
+            broker, um serviço isolado em camadas hexagonais e o transactional outbox garantindo
+            entrega consistente. Alterne entre as abas para ver cada um.
           </p>
           <div className="mt-5 flex flex-wrap gap-2">
             {[
-              "APIs REST",
+              "API Gateway",
               "Mensageria",
               "Cache distribuído",
+              "Hexagonal",
+              "Outbox Pattern",
               "Resiliência",
-              "Escalabilidade",
-              "Observabilidade",
             ].map((tag) => (
               <Tag key={tag} className="px-3 py-1 text-[11px]">
                 {tag}
