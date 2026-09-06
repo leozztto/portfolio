@@ -11,7 +11,7 @@ export function WorkingStyle() {
         <SectionHeader method="GET" route="/atuacao" title="Como Atuo" />
       </Reveal>
       <Reveal delay={80}>
-        <p className="mb-10 text-base text-muted">
+        <p className="mb-10 text-base text-justify text-muted">
           Combino desenvolvimento hands-on e arquitetura, transformando problemas de negócio em
           sistemas confiáveis, escaláveis e fáceis de evoluir. O mapa e os pilares abaixo resumem
           onde essa experiência é mais forte.
@@ -22,7 +22,7 @@ export function WorkingStyle() {
         {/* Mapa de domínios (radar) */}
         <Reveal
           delay={120}
-          className="flex flex-col rounded-lg border border-border bg-surface p-6"
+          className="flex flex-col rounded-xl border border-accent/30 bg-gradient-to-br from-accent/10 via-surface to-surface p-7 shadow-lg shadow-black/20"
         >
           <div className="mb-4 flex items-center justify-between border-b border-border pb-4">
             <p className="font-mono text-xs uppercase tracking-widest text-muted">
@@ -37,7 +37,10 @@ export function WorkingStyle() {
 
         {/* Pilares técnicos — um único card, com o mesmo padding do
             painel ao lado, para que os dois comecem exatamente na mesma linha */}
-        <Reveal delay={150} className="flex flex-col rounded-lg border border-border bg-surface p-6">
+        <Reveal
+          delay={150}
+          className="flex flex-col rounded-xl border border-accent/30 bg-gradient-to-br from-accent/10 via-surface to-surface p-7 shadow-lg shadow-black/20"
+        >
           <div className="flex flex-1 flex-col justify-between divide-y divide-border">
             {techPillars.map((item) => (
               <div key={item.title} className="py-3 first:pt-0 last:pb-0">
@@ -47,7 +50,7 @@ export function WorkingStyle() {
                     {item.badge}
                   </span>
                 </div>
-                <p className="mt-1.5 text-sm text-muted">{item.items}</p>
+                <p className="mt-1.5 text-sm text-justify text-muted">{item.items}</p>
               </div>
             ))}
           </div>
@@ -70,7 +73,7 @@ export function WorkingStyle() {
               </span>
               <div>
                 <h4 className="font-display text-base font-bold">{item.title}</h4>
-                <p className="mt-1 text-sm text-muted">{item.description}</p>
+                <p className="mt-1 text-sm text-justify text-muted">{item.description}</p>
               </div>
             </Reveal>
           ))}

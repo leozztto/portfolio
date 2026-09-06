@@ -11,7 +11,7 @@ import { Contact } from "@/components/sections/Contact";
 
 export default function Home() {
   return (
-    <main className="bg-grid min-h-screen">
+    <main className="min-h-screen">
       <SiteHeader />
       <Hero />
       <About />

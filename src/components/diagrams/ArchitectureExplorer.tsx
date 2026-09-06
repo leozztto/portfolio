@@ -44,7 +44,7 @@ export function ArchitectureExplorer() {
     }`;
 
   return (
-    <div className="rounded-lg border border-border bg-surface p-5">
+    <div className="rounded-xl border border-accent/30 bg-gradient-to-br from-accent/10 via-surface to-surface p-6 shadow-lg shadow-black/20">
       <div className="flex flex-wrap gap-2" role="tablist" aria-label="Padrões de arquitetura">
         {tabs.map((t) => (
           <button

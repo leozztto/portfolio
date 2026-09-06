@@ -19,7 +19,7 @@ export function Architecture() {
             Simples de explicar,
             <br /> pronto pra <span className="text-accent">produção</span>
           </h3>
-          <p className="mt-4 text-sm text-muted">
+          <p className="mt-4 text-sm text-justify text-muted">
             Os diagramas ao lado resumem quatro padrões que uso bastante no dia a dia: serviços por
             trás de um gateway com cache distribuído, um fluxo orientado a eventos passando por um
             broker, um serviço isolado em camadas hexagonais e o transactional outbox garantindo

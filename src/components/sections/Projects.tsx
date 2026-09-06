@@ -11,7 +11,7 @@ export function Projects() {
         <SectionHeader method="GET" route="/projetos" title="Projetos" />
       </Reveal>
       <Reveal delay={80}>
-        <p className="mb-10 text-base text-muted">
+        <p className="mb-10 text-base text-justify text-muted">
           Sistemas construídos e mantidos por mim — do design da API REST e de eventos à
           persistência em PostgreSQL, passando por mensageria com Kafka, cache com Redis e deploy
           em containers com Docker e Kubernetes.
@@ -24,14 +24,14 @@ export function Projects() {
               href={p.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex h-full flex-col rounded-lg border border-border bg-surface p-6 transition hover:-translate-y-1 hover:border-accent/50 hover:shadow-lg hover:shadow-black/30"
+              className="group flex h-full flex-col rounded-xl border border-accent/30 bg-gradient-to-br from-accent/10 via-surface to-surface p-7 shadow-lg shadow-black/20 transition hover:-translate-y-1 hover:border-accent/50 hover:shadow-xl hover:shadow-black/30"
             >
               <div className="mb-2 flex items-center gap-2">
                 <MethodTag method={p.method} />
                 <span className="font-mono text-xs text-muted">{p.route}</span>
               </div>
               <h3 className="font-display text-lg font-bold">{p.name}</h3>
-              <p className="mt-2 text-sm text-muted">{p.description}</p>
+              <p className="mt-2 text-sm text-justify text-muted">{p.description}</p>
               <div className="mt-4 rounded border border-border bg-surface-alt p-3 font-mono text-[11px] leading-relaxed text-muted">
                 <p className="text-text">→ {p.request}</p>
                 <p className="mt-1 text-success">← {p.response}</p>
