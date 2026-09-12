@@ -49,6 +49,10 @@ export interface Project {
   request: string;
   response: string;
   href: string;
+  /** Badge curto exibido quando o projeto recebeu melhorias recentes relevantes. */
+  badge?: string;
+  /** Itens de destaque (arquitetura, qualidade, entregas) — só para projetos com mais profundidade. */
+  highlights?: string[];
 }
 
 export interface ChangelogEntry {
