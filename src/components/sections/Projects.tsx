@@ -1,7 +1,6 @@
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { MethodTag } from "@/components/ui/MethodTag";
-import { Tag } from "@/components/ui/Tag";
+import { ProjectsList } from "@/components/sections/ProjectsList";
 import { projects } from "@/content/projects";
 
 export function Projects() {
@@ -17,36 +16,9 @@ export function Projects() {
           em containers com Docker e Kubernetes.
         </p>
       </Reveal>
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {projects.map((p, i) => (
-          <Reveal key={p.name} delay={i * 120} className="h-full">
-            <a
-              href={p.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex h-full flex-col rounded-xl border border-accent/30 bg-gradient-to-br from-accent/10 via-surface to-surface p-7 shadow-lg shadow-black/20 transition hover:-translate-y-1 hover:border-accent/50 hover:shadow-xl hover:shadow-black/30"
-            >
-              <div className="mb-2 flex items-center gap-2">
-                <MethodTag method={p.method} />
-                <span className="font-mono text-xs text-muted">{p.route}</span>
-              </div>
-              <h3 className="font-display text-lg font-bold">{p.name}</h3>
-              <p className="mt-2 text-sm text-justify text-muted">{p.description}</p>
-              <div className="mt-4 rounded border border-border bg-surface-alt p-3 font-mono text-[11px] leading-relaxed text-muted">
-                <p className="text-text">→ {p.request}</p>
-                <p className="mt-1 text-success">← {p.response}</p>
-              </div>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {p.stack.map((s) => (
-                  <Tag key={s} className="px-2 py-0.5 text-[10px]">
-                    {s}
-                  </Tag>
-                ))}
-              </div>
-            </a>
-          </Reveal>
-        ))}
-      </div>
+      <Reveal delay={100}>
+        <ProjectsList projects={projects} />
+      </Reveal>
     </section>
   );
 }
