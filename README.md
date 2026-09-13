@@ -13,6 +13,17 @@ npm run dev
 
 Acesse http://localhost:3000
 
+## Qualidade
+
+```bash
+npm run lint        # ESLint
+npm run type-check  # TypeScript
+npm run test        # Vitest (conteúdo tipado + componentes)
+npm run build       # build de produção
+```
+
+Todos os quatro rodam no CI (`.github/workflows/ci.yml`) a cada push/PR.
+
 ## Estrutura
 
 ```
