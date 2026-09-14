@@ -81,3 +81,23 @@ export interface StatusInfo {
   experience_time: string;
   available_for: string;
 }
+
+export interface ObservabilityMetric {
+  label: string;
+  value: string;
+}
+
+export interface ObservabilityEntry {
+  /** Deve bater com `Project.name` correspondente em `src/content/projects.ts`. */
+  projectName: string;
+  method: string;
+  route: string;
+  /**
+   * "live": medido ao vivo pelo navegador (só o portfolio expõe endpoint público).
+   * "declared": stack/qualidade documentada no próprio projeto, sem endpoint público para medir.
+   */
+  mode: "live" | "declared";
+  note: string;
+  /** Só para mode "declared". */
+  metrics?: ObservabilityMetric[];
+}
