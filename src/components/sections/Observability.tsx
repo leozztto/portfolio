@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { MethodTag } from "@/components/ui/MethodTag";
-import { Tag } from "@/components/ui/Tag";
 import { observabilityEntries } from "@/content/observability";
 import type { ObservabilityEntry } from "@/types/content";
 
@@ -191,9 +190,8 @@ export function Observability() {
 
       <Reveal delay={80}>
         <p className="text-sm text-muted">
-          Métricas separadas por projeto: dos 3, só o <Tag className="px-1.5 py-0">portfolio</Tag>{" "}
-          expõe um endpoint público — por isso é o único medido ao vivo abaixo. Os outros dois
-          mostram a observabilidade e a qualidade documentadas em cada um deles.
+          Métricas separadas por projeto: cada uma das três aplicações abaixo tem uma abordagem
+          própria de observabilidade, moldada pelo que ela realmente precisa monitorar em produção.
         </p>
       </Reveal>
 
