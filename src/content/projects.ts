@@ -25,7 +25,7 @@ export const projects: Project[] = [
       "8 microsserviços completos (saga coreografada)",
       "Gateway: JWT na borda + rate limiting + Swagger agregado",
       "Auth Service: JWT RS256 via JWKS",
-      "Observabilidade: Prometheus + Grafana + OpenTelemetry",
+      "Outbox/Inbox + DLT + retry entre os 8 serviços",
     ],
   },
   {
@@ -50,9 +50,9 @@ export const projects: Project[] = [
     badge: "Grandes melhorias recentes",
     highlights: [
       "Monorepo backend + frontend + Nginx (ADR)",
-      "CI por módulo c/ SonarCloud Quality Gate",
+      "Arquitetura ledger + projection para o core banking",
       "JWT c/ papéis admin/usuário",
-      "Testes unitários, integração (Testcontainers) e Pact",
+      "Idempotência de transferências via Kafka",
     ],
   },
   {

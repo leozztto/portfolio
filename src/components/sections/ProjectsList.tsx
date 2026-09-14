@@ -15,10 +15,10 @@ export function ProjectsList({ projects }: { projects: Project[] }) {
         return (
           <div
             key={p.name}
-            className={`rounded-xl border bg-gradient-to-br from-accent/10 via-surface to-surface p-6 transition ${
+            className={`rounded-xl border bg-gradient-to-br from-surface/80 to-surface/35 p-6 transition !duration-200 hover:border-accent/50 ${
               isOpen
                 ? "border-accent/60 shadow-xl shadow-black/30"
-                : "border-accent/30 shadow-lg shadow-black/20"
+                : "border-border shadow-lg shadow-black/20"
             }`}
           >
             <button
@@ -44,7 +44,7 @@ export function ProjectsList({ projects }: { projects: Project[] }) {
               </span>
             </button>
 
-            <p className="mt-3 text-sm text-justify text-muted">{p.description}</p>
+            <p className="mt-3 text-justify text-sm text-muted">{p.description}</p>
 
             <div
               className={`overflow-hidden transition-all duration-500 ease-out ${
