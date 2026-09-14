@@ -96,7 +96,7 @@ function LivePanel({ entry }: { entry: ObservabilityEntry }) {
   const successRate = pings.length ? Math.round((successful.length / pings.length) * 100) : 0;
 
   return (
-    <div className="rounded-xl border border-accent/30 bg-gradient-to-br from-accent/10 via-surface to-surface p-5">
+    <div className="rounded-xl border border-border bg-gradient-to-br from-surface/80 to-surface/35 p-5 shadow-lg shadow-black/20 transition !duration-200 hover:border-accent/50">
       <EntryHeader entry={entry} />
       <p className="mb-4 text-justify text-sm text-muted">{entry.note}</p>
 
@@ -163,7 +163,7 @@ function LivePanel({ entry }: { entry: ObservabilityEntry }) {
 
 function DeclaredPanel({ entry }: { entry: ObservabilityEntry }) {
   return (
-    <div className="rounded-xl border border-border bg-surface p-5">
+    <div className="rounded-xl border border-border bg-gradient-to-br from-surface/80 to-surface/35 p-5 shadow-lg shadow-black/20 transition !duration-200 hover:border-accent/50">
       <EntryHeader entry={entry} />
       <p className="mb-4 text-justify text-sm text-muted">{entry.note}</p>
 
@@ -190,8 +190,10 @@ export function Observability() {
 
       <Reveal delay={80}>
         <p className="text-sm text-muted">
-          Métricas separadas por projeto: cada uma das três aplicações abaixo tem uma abordagem
-          própria de observabilidade, moldada pelo que ela realmente precisa monitorar em produção.
+          Escalabilidade, resiliência e observabilidade são padrões arquiteturais que aplico em
+          qualquer sistema que projeto — cada uma das três aplicações abaixo mostra isso à sua
+          própria maneira, com uma abordagem de observabilidade moldada pelo que ela realmente
+          precisa monitorar em produção.
         </p>
       </Reveal>
 

@@ -13,19 +13,19 @@ export const observabilityEntries: ObservabilityEntry[] = [
     method: "GET",
     route: "/",
     mode: "live",
-    note: "Um site Next.js pede uma observabilidade mais direta: um endpoint de status real (/api/status, o mesmo que alimenta o terminal lá no topo) sondado agora mesmo, no seu navegador, junto com a página inicial, o sitemap.xml e o robots.txt. Os números abaixo vêm dessas chamadas reais, feitas ao vivo.",
+    note: "Um site Next.js pede uma observabilidade mais direta: as 4 rotas públicas dele — página inicial, API /api/status, sitemap.xml e robots.txt — são sondadas agora mesmo, no seu navegador, com uma chamada real para cada uma. Os números abaixo vêm dessas chamadas, feitas ao vivo.",
   },
   {
     projectName: "lmf-event-driven-platform",
     method: "GET",
     route: "/actuator/prometheus",
     mode: "declared",
-    note: "Os 8 microsserviços expõem métricas via Micrometer/Actuator, coletadas pelo Prometheus e visualizadas em dashboards no Grafana. O rastreamento distribuído com OpenTelemetry acompanha cada evento ao longo da saga coreografada no Kafka, e o padrão Outbox/Inbox com Dead Letter Topic e retry dá visibilidade sobre falhas e reprocessamento de mensagens. Esse cluster é privado, então os números abaixo vêm do que já foi implementado no projeto, não de uma sondagem em tempo real.",
+    note: "Os 8 microsserviços expõem métricas via Micrometer/Actuator, coletadas pelo Prometheus e visualizadas em dashboards no Grafana. O rastreamento distribuído com OpenTelemetry acompanha cada evento ao longo da saga coreografada no Kafka, correlacionando os spans entre serviços mesmo quando a mensagem passa pelo Outbox/Inbox. Esse cluster é privado, então os números abaixo vêm do que já foi implementado no projeto, não de uma sondagem em tempo real.",
     metrics: [
+      { label: "instrumentação", value: "Micrometer" },
       { label: "métricas", value: "Prometheus" },
       { label: "dashboards", value: "Grafana" },
       { label: "tracing distribuído", value: "OpenTelemetry" },
-      { label: "resiliência", value: "DLT + retry" },
     ],
   },
   {

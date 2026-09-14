@@ -77,7 +77,10 @@ export function About() {
 
         {/* Metadados: experiência, formação, estudos */}
         <div className="space-y-6">
-          <Reveal delay={200} className="rounded-xl border border-accent/30 bg-gradient-to-br from-accent/10 via-surface to-surface p-6 shadow-lg shadow-black/20">
+          <Reveal
+            delay={200}
+            className="rounded-xl border border-border bg-gradient-to-br from-surface/80 to-surface/35 p-7 shadow-lg shadow-black/20 transition !duration-200 hover:border-accent/50 hover:shadow-xl hover:shadow-black/30"
+          >
             <p className="mb-3 font-mono text-xs uppercase tracking-widest text-muted">
               Experiência com
             </p>
@@ -90,7 +93,10 @@ export function About() {
             </ul>
           </Reveal>
 
-          <Reveal delay={280} className="rounded-xl border border-accent/30 bg-gradient-to-br from-accent/10 via-surface to-surface p-6 shadow-lg shadow-black/20">
+          <Reveal
+            delay={280}
+            className="rounded-xl border border-border bg-gradient-to-br from-surface/80 to-surface/35 p-7 shadow-lg shadow-black/20 transition !duration-200 hover:border-accent/50 hover:shadow-xl hover:shadow-black/30"
+          >
             <p className="mb-3 font-mono text-xs uppercase tracking-widest text-muted">
               🎓 Formação
             </p>
@@ -103,7 +109,10 @@ export function About() {
             </ul>
           </Reveal>
 
-          <Reveal delay={360} className="rounded-xl border border-accent/30 bg-gradient-to-br from-accent/10 via-surface to-surface p-6 shadow-lg shadow-black/20">
+          <Reveal
+            delay={360}
+            className="rounded-xl border border-border bg-gradient-to-br from-surface/80 to-surface/35 p-7 shadow-lg shadow-black/20 transition !duration-200 hover:border-accent/50 hover:shadow-xl hover:shadow-black/30"
+          >
             <p className="mb-3 font-mono text-xs uppercase tracking-widest text-muted">
               📚 Atualmente estudando
             </p>
