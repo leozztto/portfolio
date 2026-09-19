@@ -47,6 +47,7 @@ src/
 - `src/config/site.ts` — nome, cargo, e-mail, URL de produção, LinkedIn/GitHub, caminho do currículo. Usado em metadata, footer, contato, `/api/status`, sitemap e robots.
 - `src/content/*.ts` — todo o texto: `stack`, `projects`, `changelog`, `about`, `working-style`, `domains`, `skills`, `navigation`, `contact`, `status`.
 - `src/app/layout.tsx` — `title` e `description` (metadata para SEO/compartilhamento).
+- **Foto de perfil** — coloque o arquivo em `public/profile.jpg`. A seção "Sobre" (`src/components/ui/ProfilePhoto.tsx`) já reserva o espaço e usa essa imagem automaticamente; até lá, mostra um avatar com as iniciais como placeholder.
 
 ## Cores e tipografia
 
