@@ -1,6 +1,7 @@
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Tag } from "@/components/ui/Tag";
+import { ProfilePhoto } from "@/components/ui/ProfilePhoto";
 import { stack } from "@/content/stack";
 import { aboutStats, experienceAreas, education, studyingNow } from "@/content/about";
 
@@ -11,17 +12,20 @@ export function About() {
         <SectionHeader method="GET" route="/sobre" title="Sobre" />
       </Reveal>
 
-      <Reveal delay={100}>
-        <p className="font-mono text-xl uppercase tracking-widest text-accent">
-          Senior Software Engineer · Back-End
-        </p>
-      </Reveal>
-
       <div className="mt-8 grid gap-10 lg:grid-cols-[1.3fr_1fr]">
         {/* Bio */}
         <div>
+          <Reveal delay={100} className="flex items-center gap-5">
+            <ProfilePhoto />
+            <p className="font-mono text-xl uppercase tracking-widest text-accent">
+              Senior Software Engineer
+              <br />
+              Back-End
+            </p>
+          </Reveal>
+
           <Reveal delay={200}>
-            <p className="max-w-2xl text-justify text-muted">
+            <p className="mt-6 max-w-2xl text-justify text-muted">
               Atuo com back-end há oito anos, boa parte desse tempo em sistemas críticos, que exigem
               alta resiliência: pagamentos, mensageria financeira e plataformas de alto volume
               transacional. Tenho grande preocupação em decisões de arquitetura que visam garantir a
